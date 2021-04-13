@@ -45,6 +45,7 @@ namespace Proyecto
             return dt;
         }
 
+        //pruebab
         private void cmbmes_SelectedIndexChanged(object sender, EventArgs e)
         {
             int prueba = cmbmes.SelectedIndex;

@@ -32,21 +32,21 @@ namespace Proyecto
             String id;
             id = TxtID.Text;
             SqlCommand comando = new SqlCommand("select *from SaldoCliente(@ID)", con.conectar);
-            comando.Parameters.AddWithValue("@ID",id);
+            comando.Parameters.AddWithValue("@ID", id);
             con.abrir();
             SqlDataReader Registro = comando.ExecuteReader();
             if (Registro.Read()) {
                 TxtNombre.Text = Registro["NOMBRE"].ToString();
                 TxtTipo.Text = Registro["TIPO"].ToString();
-                TxtDireccion.Text= Registro["DIRECCIÓN"].ToString();
-                TxtEC.Text= Registro["ESTADO CIVIL"].ToString();
-                TxtLimite.Text= Registro["LIMITE"].ToString();
-                TxtSaldo.Text= Registro["SALDO"].ToString();
-                TxtSexo.Text= Registro["SEXO"].ToString();
+                TxtDireccion.Text = Registro["DIRECCIÓN"].ToString();
+                TxtEC.Text = Registro["ESTADO CIVIL"].ToString();
+                TxtLimite.Text = Registro["LIMITE"].ToString();
+                TxtSaldo.Text = Registro["SALDO"].ToString();
+                TxtSexo.Text = Registro["SEXO"].ToString();
             }
             con.close();
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             SaldoCdia frm = new SaldoCdia();
