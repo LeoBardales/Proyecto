@@ -14,6 +14,7 @@ namespace Proyecto
     public partial class Form1 : Form
     {
         //prueba
+        //otra prueba
         public Form1()
         {
             InitializeComponent();
