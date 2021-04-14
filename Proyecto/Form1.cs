@@ -32,13 +32,13 @@ namespace Proyecto
         
         private void button1_Click(object sender, EventArgs e)
         {
-            SaldoCdia frm = new SaldoCdia();
+            ProveedoresMemu frm = new ProveedoresMemu();
             frm.Show();
         }
 
         private void btnsaldo_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
+            ClientesMenu cliente = new ClientesMenu();
             cliente.Show();
 
         }
