@@ -21,6 +21,7 @@ namespace Proyecto
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
+            Limpiar();
             String id;
             id = TxtID.Text;
             SqlCommand comando = new SqlCommand("select *from SaldoCliente(@ID)", con.conectar);
@@ -37,7 +38,20 @@ namespace Proyecto
                 TxtSaldo.Text = Registro["SALDO"].ToString();
                 TxtSexo.Text = Registro["SEXO"].ToString();
             }
+            else {
+                MessageBox.Show("NO EXISTE NINGUN CLIENTE CON ESE ID");
+            }
             con.close();
+        }
+
+        public void Limpiar() {
+            TxtNombre.Text = "";
+            TxtTipo.Text = "";
+            TxtDireccion.Text = "";
+            TxtEC.Text = "";
+            TxtLimite.Text = "";
+            TxtSaldo.Text = "";
+            TxtSexo.Text = "";
         }
     }
 }
