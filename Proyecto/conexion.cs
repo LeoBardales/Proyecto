@@ -9,7 +9,7 @@ namespace Proyecto
 {
     class conexion
     {
-        String cadena = "Data Source=DESKTOP-21NR26T; Initial Catalog=proyecto; Integrated Security=true";
+        String cadena = "Data Source=DESKTOP-1; Initial Catalog=proyecto; Integrated Security=true";
         public SqlConnection conectar = new SqlConnection();
 
         public conexion()
