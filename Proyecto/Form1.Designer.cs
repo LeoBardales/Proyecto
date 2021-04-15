@@ -39,7 +39,7 @@ namespace Proyecto
             this.btnClienteMes.Name = "btnClienteMes";
             this.btnClienteMes.Size = new System.Drawing.Size(140, 57);
             this.btnClienteMes.TabIndex = 17;
-            this.btnClienteMes.Text = "PROVEEDORES";
+            this.btnClienteMes.Text = "COMPRAS";
             this.btnClienteMes.UseVisualStyleBackColor = true;
             this.btnClienteMes.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -49,7 +49,7 @@ namespace Proyecto
             this.btnsaldo.Name = "btnsaldo";
             this.btnsaldo.Size = new System.Drawing.Size(140, 57);
             this.btnsaldo.TabIndex = 18;
-            this.btnsaldo.Text = "CLIENTES";
+            this.btnsaldo.Text = "VENTAS";
             this.btnsaldo.UseVisualStyleBackColor = true;
             this.btnsaldo.Click += new System.EventHandler(this.btnsaldo_Click);
             // 

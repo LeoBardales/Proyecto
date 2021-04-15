@@ -1,7 +1,7 @@
 ﻿
 namespace Proyecto
 {
-    partial class ProveedoresMemu
+    partial class ComprasMemu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,17 @@ namespace Proyecto
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // ComprasMemu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ProveedoresMemu";
+            this.ClientSize = new System.Drawing.Size(598, 308);
+            this.Name = "ComprasMemu";
+            this.Text = "DEPARTAMENTOS DE COMPRAS";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

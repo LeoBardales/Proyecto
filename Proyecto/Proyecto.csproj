@@ -97,6 +97,9 @@
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientesMenu.resx">
+      <DependentUpon>ClientesMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +112,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ProveedoresMemu.resx">
+      <DependentUpon>ProveedoresMemu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SaldoCdia.resx">
       <DependentUpon>SaldoCdia.cs</DependentUpon>
     </EmbeddedResource>

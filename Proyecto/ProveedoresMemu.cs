@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto
 {
-    public partial class ProveedoresMemu : Form
+    public partial class ComprasMemu : Form
     {
-        public ProveedoresMemu()
+        public ComprasMemu()
         {
             InitializeComponent();
         }

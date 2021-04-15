@@ -1,7 +1,7 @@
 ﻿
 namespace Proyecto
 {
-    partial class ClientesMenu
+    partial class VentasMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,32 @@ namespace Proyecto
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.Location = new System.Drawing.Point(12, 12);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(125, 51);
+            this.btnClientes.TabIndex = 0;
+            this.btnClientes.Text = "CLIENTES";
+            this.btnClientes.UseVisualStyleBackColor = true;
+            // 
+            // VentasMenu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ClientesMenu";
+            this.ClientSize = new System.Drawing.Size(536, 316);
+            this.Controls.Add(this.btnClientes);
+            this.Name = "VentasMenu";
+            this.Text = "DEPARTAMENTOS DE VENTAS";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnClientes;
     }
 }
