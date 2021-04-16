@@ -16,5 +16,11 @@ namespace Proyecto
         {
             InitializeComponent();
         }
+
+        private void BtnClientes_Click(object sender, EventArgs e)
+        {
+            Cliente frm = new Cliente();
+            frm.Show();
+        }
     }
 }

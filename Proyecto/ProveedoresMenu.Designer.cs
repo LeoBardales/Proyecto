@@ -1,7 +1,7 @@
 ﻿
 namespace Proyecto
 {
-    partial class ComprasMemu
+    partial class ComprasMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,30 @@ namespace Proyecto
         /// </summary>
         private void InitializeComponent()
         {
+            this.Proveedores = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // ComprasMemu
+            // Proveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 308);
-            this.Name = "ComprasMemu";
-            this.Text = "DEPARTAMENTOS DE COMPRAS";
+            this.Proveedores.Location = new System.Drawing.Point(8, 16);
+            this.Proveedores.Name = "Proveedores";
+            this.Proveedores.Size = new System.Drawing.Size(112, 56);
+            this.Proveedores.TabIndex = 0;
+            this.Proveedores.Text = "PROVEEDORES";
+            this.Proveedores.UseVisualStyleBackColor = true;
+            this.Proveedores.Click += new System.EventHandler(this.Proveedores_Click);
+            // 
+            // ComprasMenu
+            // 
+            this.ClientSize = new System.Drawing.Size(356, 261);
+            this.Controls.Add(this.Proveedores);
+            this.Name = "ComprasMenu";
+            this.Text = "DEPARTAMENTO DE COMPRAS";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        private System.Windows.Forms.Button Proveedores;
     }
 }

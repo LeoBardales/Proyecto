@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Proyecto
 {
-    public partial class ComprasMemu : Form
+    public partial class ComprasMenu : Form
     {
-        public ComprasMemu()
+        public ComprasMenu()
         {
             InitializeComponent();
         }
+
+        private void Proveedores_Click(object sender, EventArgs e)
+        {
+            Proveedores frm = new Proveedores();
+            frm.Show();
+        }
     }
-}
+ }
+

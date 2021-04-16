@@ -53,5 +53,10 @@ namespace Proyecto
             TxtSaldo.Text = "";
             TxtSexo.Text = "";
         }
+
+        private void TxtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

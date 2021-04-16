@@ -32,7 +32,7 @@ namespace Proyecto
         
         private void button1_Click(object sender, EventArgs e)
         {
-            ComprasMemu frm = new ComprasMemu();
+            ComprasMenu frm = new ComprasMenu();
             frm.Show();
         }
 
