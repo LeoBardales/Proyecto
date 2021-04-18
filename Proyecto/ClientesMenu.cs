@@ -22,5 +22,11 @@ namespace Proyecto
             Cliente frm = new Cliente();
             frm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaldoCdia frm = new SaldoCdia();
+            frm.Show();
+        }
     }
 }
