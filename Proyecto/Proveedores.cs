@@ -210,23 +210,7 @@ namespace Proyecto
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            {
-                
-                try
-                {
-                    SqlCommand command = new SqlCommand("execute spDeleteProveedor " + txtID.Text + " ", con.conectar);
-                    con.abrir();
-                    command.ExecuteNonQuery();
-                    con.close();
-                    MessageBox.Show("Datos Actualizados");
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Se Detecto un Error " + ex.Message);
-                }
-
-            }
+            
         }
     }
     
