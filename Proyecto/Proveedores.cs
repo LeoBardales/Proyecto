@@ -37,7 +37,7 @@ namespace Proyecto
                 int id = Convert.ToInt32(dato);
 
 
-                SqlCommand comando = new SqlCommand("execute spSelectProveedores @ID", con.conectar);
+                SqlCommand comando = new SqlCommand("select *from SaldoProveedor(@ID) ", con.conectar);
                 comando.Parameters.AddWithValue("@ID", id);
                 con.abrir();
                 SqlDataReader Registro = comando.ExecuteReader();
@@ -50,11 +50,14 @@ namespace Proyecto
                     txtEMAIL.Text = Registro["EMAIL"].ToString();
                     txtLIMITE.Text = Registro["LIMITE"].ToString();
                     txtSALDO.Text = Registro["SALDO"].ToString();
+                    cmbtipo.Text= Registro["TIPO DE PROVEEDOR"].ToString();
+                    actualizar(true);
 
                 }
                 else
                 {
                     MessageBox.Show("NO EXISTE NINGUN PROVEEDOR CON ESE ID");
+                    actualizar(false);
 
                 }
                 con.close();
@@ -68,7 +71,7 @@ namespace Proyecto
         }
 
 
-     
+        string tipo = "";
         private void Siguiente_Click(object sender, EventArgs e)
         {
             dato = txtID.Text;
@@ -92,11 +95,14 @@ namespace Proyecto
                     txtEMAIL.Text = Registro["EMAIL"].ToString();
                     txtLIMITE.Text = Registro["LIMITE"].ToString();
                     txtSALDO.Text = Registro["SALDO"].ToString();
+                    tipo = Registro["TIPOPROVEEDORID"].ToString();
+                    actualizar(true);
 
                 }
                 else
                 {
                     MessageBox.Show("NO HAY MAS REGISTRO DE PROVEEDORES");
+                   
                 }
                 con.close();
             }
@@ -118,14 +124,20 @@ namespace Proyecto
                     txtEMAIL.Text = Registro["EMAIL"].ToString();
                     txtLIMITE.Text = Registro["LIMITE"].ToString();
                     txtSALDO.Text = Registro["SALDO"].ToString();
+                    tipo = Registro["TIPOPROVEEDORID"].ToString();
+                    actualizar(true);
 
                 }
                 else
                 {
                     MessageBox.Show("NO HAY MAS REGISTRO DE PROVEEDORES");
+                   
                 }
                 con.close();
             }
+            if (tipo=="1") { cmbtipo.Text = "NACIONAL"; }
+            if (tipo == "2") { cmbtipo.Text = "INTERNACIONAL"; }
+            tipo = "";
         }
 
         private void Anterior_Click(object sender, EventArgs e)
@@ -147,20 +159,77 @@ namespace Proyecto
                 txtEMAIL.Text = Registro["EMAIL"].ToString();
                 txtLIMITE.Text = Registro["LIMITE"].ToString();
                 txtSALDO.Text = Registro["SALDO"].ToString();
+                tipo = Registro["TIPOPROVEEDORID"].ToString();
+                actualizar(true);
 
             }
             else
             {
                 MessageBox.Show("NO HAY MAS REGISTRO DE PROVEEDORES");
+                
             }
             con.close();
+            if (tipo == "1") { cmbtipo.Text = "NACIONAL"; }
+            if (tipo == "2") { cmbtipo.Text = "INTERNACIONAL"; }
+            tipo = "";
         }
 
         private void LblSaldo_Click(object sender, EventArgs e)
         {
 
         }
+        public void actualizar(Boolean res) {
+            btnActualizar.Enabled = res;
+            btnEliminar.Enabled = res;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ListaProveedores lp = new ListaProveedores();
+            lp.Show();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (cmbtipo.Text == "NACIONAL") { tipo = "1"; }
+            if (cmbtipo.Text == "INTERNACIONAL") { tipo = "2"; }
+            try
+            {
+                SqlCommand command = new SqlCommand("execute spUpdateProveedores "+txtID.Text+ ",'"+ txtNOMBRE.Text + "'," + txtRTN.Text + ",'" + txtCONTACTO.Text + "','" + txtTELEFONO.Text + "'," + tipo + ",'" + txtEMAIL.Text + "'," + txtLIMITE.Text + "", con.conectar);
+                con.abrir();
+                command.ExecuteNonQuery();
+                con.close();
+                MessageBox.Show("Datos Actualizados");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se Detecto un Error " + ex.Message);
+            }
+            
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            {
+                
+                try
+                {
+                    SqlCommand command = new SqlCommand("execute spDeleteProveedor " + txtID.Text + " ", con.conectar);
+                    con.abrir();
+                    command.ExecuteNonQuery();
+                    con.close();
+                    MessageBox.Show("Datos Actualizados");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se Detecto un Error " + ex.Message);
+                }
+
+            }
+        }
     }
+    
     
 }
 
