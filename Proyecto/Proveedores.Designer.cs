@@ -48,12 +48,15 @@ namespace Proyecto
             this.lblSaldo = new System.Windows.Forms.Label();
             this.txtLIMITE = new System.Windows.Forms.TextBox();
             this.txtSALDO = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLista = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbtipo = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSM = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MostrarDatos
@@ -268,18 +271,18 @@ namespace Proyecto
             this.txtSALDO.TabIndex = 18;
             this.txtSALDO.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button1
+            // btnLista
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(568, 216);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 32);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Lista";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLista.Location = new System.Drawing.Point(568, 146);
+            this.btnLista.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnLista.Name = "btnLista";
+            this.btnLista.Size = new System.Drawing.Size(116, 32);
+            this.btnLista.TabIndex = 19;
+            this.btnLista.Text = "Lista";
+            this.btnLista.UseVisualStyleBackColor = false;
+            this.btnLista.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -303,23 +306,24 @@ namespace Proyecto
             this.cmbtipo.Size = new System.Drawing.Size(186, 26);
             this.cmbtipo.TabIndex = 21;
             // 
-            // button2
+            // btnSM
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(568, 254);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 32);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Saldos Mes";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSM.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnSM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSM.Location = new System.Drawing.Point(568, 203);
+            this.btnSM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSM.Name = "btnSM";
+            this.btnSM.Size = new System.Drawing.Size(116, 32);
+            this.btnSM.TabIndex = 22;
+            this.btnSM.Text = "Saldos Mes";
+            this.btnSM.UseVisualStyleBackColor = false;
+            this.btnSM.Click += new System.EventHandler(this.btnSM_Click);
             // 
             // btnActualizar
             // 
             this.btnActualizar.Enabled = false;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(568, 132);
+            this.btnActualizar.Location = new System.Drawing.Point(30, 249);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(116, 37);
@@ -332,7 +336,7 @@ namespace Proyecto
             // 
             this.btnEliminar.Enabled = false;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(568, 173);
+            this.btnEliminar.Location = new System.Drawing.Point(181, 249);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(116, 37);
@@ -341,17 +345,58 @@ namespace Proyecto
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(334, 249);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(116, 37);
+            this.btnNuevo.TabIndex = 25;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Enabled = false;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(475, 249);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(116, 37);
+            this.btnGuardar.TabIndex = 26;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Enabled = false;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(612, 249);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(116, 37);
+            this.btnCancelar.TabIndex = 27;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 289);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSM);
             this.Controls.Add(this.cmbtipo);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLista);
             this.Controls.Add(this.txtSALDO);
             this.Controls.Add(this.txtLIMITE);
             this.Controls.Add(this.lblSaldo);
@@ -401,11 +446,14 @@ namespace Proyecto
         private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.TextBox txtLIMITE;
         private System.Windows.Forms.TextBox txtSALDO;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLista;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbtipo;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSM;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

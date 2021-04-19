@@ -100,6 +100,12 @@
     <Compile Include="ProveedoresMenu.Designer.cs">
       <DependentUpon>ProveedoresMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProveedorMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProveedorMes.Designer.cs">
+      <DependentUpon>ProveedorMes.cs</DependentUpon>
+    </Compile>
     <Compile Include="SaldoCdia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </Compile>
     <EmbeddedResource Include="ProveedoresMenu.resx">
       <DependentUpon>ProveedoresMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProveedorMes.resx">
+      <DependentUpon>ProveedorMes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SaldoCdia.resx">
       <DependentUpon>SaldoCdia.cs</DependentUpon>

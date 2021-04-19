@@ -50,7 +50,7 @@ namespace Proyecto
                     txtEMAIL.Text = Registro["EMAIL"].ToString();
                     txtLIMITE.Text = Registro["LIMITE"].ToString();
                     txtSALDO.Text = Registro["SALDO"].ToString();
-                    cmbtipo.Text= Registro["TIPO DE PROVEEDOR"].ToString();
+                    cmbtipo.Text = Registro["TIPO DE PROVEEDOR"].ToString();
                     actualizar(true);
 
                 }
@@ -102,7 +102,7 @@ namespace Proyecto
                 else
                 {
                     MessageBox.Show("NO HAY MAS REGISTRO DE PROVEEDORES");
-                   
+
                 }
                 con.close();
             }
@@ -131,11 +131,11 @@ namespace Proyecto
                 else
                 {
                     MessageBox.Show("NO HAY MAS REGISTRO DE PROVEEDORES");
-                   
+
                 }
                 con.close();
             }
-            if (tipo=="1") { cmbtipo.Text = "NACIONAL"; }
+            if (tipo == "1") { cmbtipo.Text = "NACIONAL"; }
             if (tipo == "2") { cmbtipo.Text = "INTERNACIONAL"; }
             tipo = "";
         }
@@ -166,7 +166,7 @@ namespace Proyecto
             else
             {
                 MessageBox.Show("NO HAY MAS REGISTRO DE PROVEEDORES");
-                
+
             }
             con.close();
             if (tipo == "1") { cmbtipo.Text = "NACIONAL"; }
@@ -194,7 +194,7 @@ namespace Proyecto
             if (cmbtipo.Text == "INTERNACIONAL") { tipo = "2"; }
             try
             {
-                SqlCommand command = new SqlCommand("execute spUpdateProveedores "+txtID.Text+ ",'"+ txtNOMBRE.Text + "'," + txtRTN.Text + ",'" + txtCONTACTO.Text + "','" + txtTELEFONO.Text + "'," + tipo + ",'" + txtEMAIL.Text + "'," + txtLIMITE.Text + "", con.conectar);
+                SqlCommand command = new SqlCommand("execute spUpdateProveedores " + txtID.Text + ",'" + txtNOMBRE.Text + "'," + txtRTN.Text + ",'" + txtCONTACTO.Text + "','" + txtTELEFONO.Text + "'," + tipo + ",'" + txtEMAIL.Text + "'," + txtLIMITE.Text + "", con.conectar);
                 con.abrir();
                 command.ExecuteNonQuery();
                 con.close();
@@ -205,12 +205,101 @@ namespace Proyecto
             {
                 MessageBox.Show("Se Detecto un Error " + ex.Message);
             }
-            
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+           
+            try
+            {
+                SqlCommand command = new SqlCommand("execute spDeleteProveedor " + txtID.Text + "", con.conectar);
+                con.abrir();
+                command.ExecuteNonQuery();
+                con.close();
+                MessageBox.Show("Datos Eliminados");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se Detecto un Error " + ex.Message);
+            }
+            Nuevo(true);
+            actualizar(false);
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Nuevo(false);
+            actualizar(false);
+            btnGuardar.Enabled = true;
+            btnCancelar.Enabled = true;
             
+
+        }
+        public void Nuevo(Boolean b){
+            txtID.Enabled = b;
+            MostrarDatos.Enabled = b;
+            Siguiente.Enabled = b;
+            Anterior.Enabled = b;
+            btnLista.Enabled = b;
+            btnSM.Enabled = b;
+            btnNuevo.Enabled = b;
+
+            txtEMAIL.Text = "";
+            txtCONTACTO.Text = "";
+            txtID.Text = "";
+            txtLIMITE.Text = "";
+            txtNOMBRE.Text = "";
+            txtRTN.Text = "";
+            txtSALDO.Text = "";
+            txtTELEFONO.Text = "";
+            cmbtipo.Text = "";
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Nuevo(true);
+            btnGuardar.Enabled = false;
+            btnCancelar.Enabled = false;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+            if (txtNOMBRE.Text != "" && txtEMAIL.Text != "" && txtCONTACTO.Text != "" && txtLIMITE.Text != "" && txtRTN.Text != "" && txtTELEFONO.Text != "" && cmbtipo.Text != "")
+            {
+                if (cmbtipo.Text == "NACIONAL") { tipo = "1"; }
+                if (cmbtipo.Text == "INTERNACIONAL") { tipo = "2"; }
+                try
+                {
+                    SqlCommand command = new SqlCommand("execute spInsertProveedores '" + txtNOMBRE.Text + "'," + txtRTN.Text + ",'" + txtCONTACTO.Text + "','" + txtTELEFONO.Text + "'," + tipo + ",'" + txtEMAIL.Text + "'," + txtLIMITE.Text + "", con.conectar);
+                    con.abrir();
+                    command.ExecuteNonQuery();
+                    con.close();
+                    MessageBox.Show("Datos Guardados");
+                    Nuevo(true);
+                    btnGuardar.Enabled = false;
+                    btnCancelar.Enabled = false;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se Detecto un Error " + ex.Message);
+                }
+
+            }
+            else {
+                MessageBox.Show("Debe llenar todos los campos");
+            }
+        }
+
+        private void btnSM_Click(object sender, EventArgs e)
+        {
+            ProveedorMes pr = new ProveedorMes();
+            pr.Show();
         }
     }
     

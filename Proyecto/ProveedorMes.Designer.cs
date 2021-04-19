@@ -1,7 +1,7 @@
 ﻿
 namespace Proyecto
 {
-    partial class SaldoCdia
+    partial class ProveedorMes
     {
         /// <summary>
         /// Required designer variable.
@@ -29,22 +29,20 @@ namespace Proyecto
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cmbmes = new System.Windows.Forms.ComboBox();
             this.cmdano = new System.Windows.Forms.ComboBox();
+            this.cmbmes = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // cmdano
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 143);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(671, 252);
-            this.dataGridView1.TabIndex = 0;
+            this.cmdano.FormattingEnabled = true;
+            this.cmdano.Location = new System.Drawing.Point(258, 37);
+            this.cmdano.Name = "cmdano";
+            this.cmdano.Size = new System.Drawing.Size(153, 24);
+            this.cmdano.TabIndex = 5;
+            this.cmdano.SelectedIndexChanged += new System.EventHandler(this.cmdano_SelectedIndexChanged);
             // 
             // cmbmes
             // 
@@ -62,32 +60,33 @@ namespace Proyecto
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.cmbmes.Location = new System.Drawing.Point(65, 54);
+            this.cmbmes.Location = new System.Drawing.Point(40, 37);
             this.cmbmes.Name = "cmbmes";
             this.cmbmes.Size = new System.Drawing.Size(150, 24);
-            this.cmbmes.TabIndex = 1;
+            this.cmbmes.TabIndex = 4;
             this.cmbmes.SelectedIndexChanged += new System.EventHandler(this.cmbmes_SelectedIndexChanged);
             // 
-            // cmdano
+            // dataGridView1
             // 
-            this.cmdano.FormattingEnabled = true;
-            this.cmdano.Location = new System.Drawing.Point(244, 54);
-            this.cmdano.Name = "cmdano";
-            this.cmdano.Size = new System.Drawing.Size(153, 24);
-            this.cmdano.TabIndex = 2;
-            this.cmdano.SelectedIndexChanged += new System.EventHandler(this.cmdano_SelectedIndexChanged);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 126);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(947, 252);
+            this.dataGridView1.TabIndex = 3;
             // 
-            // SaldoCdia
+            // ProveedorMes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 450);
+            this.ClientSize = new System.Drawing.Size(965, 450);
             this.Controls.Add(this.cmdano);
             this.Controls.Add(this.cmbmes);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "SaldoCdia";
-            this.Text = "SaldoCdia";
-            this.Load += new System.EventHandler(this.SaldoCdia_Load);
+            this.Name = "ProveedorMes";
+            this.Text = "ProveedorMes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -95,8 +94,8 @@ namespace Proyecto
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox cmbmes;
         private System.Windows.Forms.ComboBox cmdano;
+        private System.Windows.Forms.ComboBox cmbmes;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
