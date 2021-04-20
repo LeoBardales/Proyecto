@@ -61,20 +61,24 @@ namespace Proyecto
             // 
             // MostrarDatos
             // 
+            this.MostrarDatos.BackColor = System.Drawing.Color.White;
             this.MostrarDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MostrarDatos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.MostrarDatos.Location = new System.Drawing.Point(568, 52);
             this.MostrarDatos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MostrarDatos.Name = "MostrarDatos";
             this.MostrarDatos.Size = new System.Drawing.Size(116, 37);
             this.MostrarDatos.TabIndex = 0;
             this.MostrarDatos.Text = "Mostrar Datos";
-            this.MostrarDatos.UseVisualStyleBackColor = true;
+            this.MostrarDatos.UseVisualStyleBackColor = false;
             this.MostrarDatos.Click += new System.EventHandler(this.MostrarDatos_Click);
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
+            this.lblID.BackColor = System.Drawing.Color.Transparent;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblID.Location = new System.Drawing.Point(608, 5);
             this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.Name = "lblID";
@@ -85,7 +89,9 @@ namespace Proyecto
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblNombre.Location = new System.Drawing.Point(88, 24);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
@@ -117,7 +123,9 @@ namespace Proyecto
             // lblRTN
             // 
             this.lblRTN.AutoSize = true;
+            this.lblRTN.BackColor = System.Drawing.Color.Transparent;
             this.lblRTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblRTN.Location = new System.Drawing.Point(120, 52);
             this.lblRTN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRTN.Name = "lblRTN";
@@ -128,7 +136,9 @@ namespace Proyecto
             // lblCONTACTO
             // 
             this.lblCONTACTO.AutoSize = true;
+            this.lblCONTACTO.BackColor = System.Drawing.Color.Transparent;
             this.lblCONTACTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCONTACTO.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblCONTACTO.Location = new System.Drawing.Point(78, 80);
             this.lblCONTACTO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCONTACTO.Name = "lblCONTACTO";
@@ -139,7 +149,9 @@ namespace Proyecto
             // lblTELEFONO
             // 
             this.lblTELEFONO.AutoSize = true;
+            this.lblTELEFONO.BackColor = System.Drawing.Color.Transparent;
             this.lblTELEFONO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTELEFONO.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblTELEFONO.Location = new System.Drawing.Point(78, 108);
             this.lblTELEFONO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTELEFONO.Name = "lblTELEFONO";
@@ -151,7 +163,9 @@ namespace Proyecto
             // lblEMAIL
             // 
             this.lblEMAIL.AutoSize = true;
+            this.lblEMAIL.BackColor = System.Drawing.Color.Transparent;
             this.lblEMAIL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEMAIL.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblEMAIL.Location = new System.Drawing.Point(110, 135);
             this.lblEMAIL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEMAIL.Name = "lblEMAIL";
@@ -201,8 +215,9 @@ namespace Proyecto
             // 
             // Anterior
             // 
-            this.Anterior.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Anterior.BackColor = System.Drawing.Color.White;
             this.Anterior.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Anterior.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Anterior.Location = new System.Drawing.Point(568, 91);
             this.Anterior.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Anterior.Name = "Anterior";
@@ -214,8 +229,9 @@ namespace Proyecto
             // 
             // Siguiente
             // 
-            this.Siguiente.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Siguiente.BackColor = System.Drawing.Color.White;
             this.Siguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Siguiente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Siguiente.Location = new System.Drawing.Point(630, 91);
             this.Siguiente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Siguiente.Name = "Siguiente";
@@ -228,7 +244,9 @@ namespace Proyecto
             // lblLimite
             // 
             this.lblLimite.AutoSize = true;
+            this.lblLimite.BackColor = System.Drawing.Color.Transparent;
             this.lblLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLimite.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblLimite.Location = new System.Drawing.Point(206, 203);
             this.lblLimite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLimite.Name = "lblLimite";
@@ -239,7 +257,9 @@ namespace Proyecto
             // lblSaldo
             // 
             this.lblSaldo.AutoSize = true;
+            this.lblSaldo.BackColor = System.Drawing.Color.Transparent;
             this.lblSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblSaldo.Location = new System.Drawing.Point(358, 203);
             this.lblSaldo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSaldo.Name = "lblSaldo";
@@ -273,8 +293,9 @@ namespace Proyecto
             // 
             // btnLista
             // 
-            this.btnLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLista.BackColor = System.Drawing.Color.White;
             this.btnLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLista.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnLista.Location = new System.Drawing.Point(568, 146);
             this.btnLista.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLista.Name = "btnLista";
@@ -287,7 +308,9 @@ namespace Proyecto
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(121, 160);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -308,8 +331,9 @@ namespace Proyecto
             // 
             // btnSM
             // 
-            this.btnSM.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnSM.BackColor = System.Drawing.Color.White;
             this.btnSM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSM.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSM.Location = new System.Drawing.Point(568, 203);
             this.btnSM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSM.Name = "btnSM";
@@ -321,72 +345,83 @@ namespace Proyecto
             // 
             // btnActualizar
             // 
+            this.btnActualizar.BackColor = System.Drawing.Color.White;
             this.btnActualizar.Enabled = false;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnActualizar.Location = new System.Drawing.Point(30, 249);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(116, 37);
             this.btnActualizar.TabIndex = 23;
             this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.White;
             this.btnEliminar.Enabled = false;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEliminar.Location = new System.Drawing.Point(181, 249);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(116, 37);
             this.btnEliminar.TabIndex = 24;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnNuevo
             // 
+            this.btnNuevo.BackColor = System.Drawing.Color.White;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnNuevo.Location = new System.Drawing.Point(334, 249);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(116, 37);
             this.btnNuevo.TabIndex = 25;
             this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.White;
             this.btnGuardar.Enabled = false;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnGuardar.Location = new System.Drawing.Point(475, 249);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(116, 37);
             this.btnGuardar.TabIndex = 26;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.White;
             this.btnCancelar.Enabled = false;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCancelar.Location = new System.Drawing.Point(612, 249);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(116, 37);
             this.btnCancelar.TabIndex = 27;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(33)))), ((int)(((byte)(8)))));
             this.ClientSize = new System.Drawing.Size(740, 289);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -417,6 +452,7 @@ namespace Proyecto
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.MostrarDatos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Proveedores";
             this.Text = "DATOS DE PROVEEDORES";
