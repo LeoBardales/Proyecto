@@ -58,5 +58,10 @@ namespace Proyecto
         {
 
         }
+
+        private void Cliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

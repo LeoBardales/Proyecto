@@ -30,39 +30,26 @@ namespace Proyecto
         private void InitializeComponent()
         {
             this.btnClientes = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClientes
             // 
-            this.btnClientes.Location = new System.Drawing.Point(12, 12);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClientes.Location = new System.Drawing.Point(9, 10);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(125, 50);
+            this.btnClientes.Size = new System.Drawing.Size(94, 41);
             this.btnClientes.TabIndex = 0;
             this.btnClientes.Text = "CLIENTES";
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.BtnClientes_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(225, 12);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 50);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "CLIENTES";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // VentasMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 316);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(402, 257);
             this.Controls.Add(this.btnClientes);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "VentasMenu";
             this.Text = "DEPARTAMENTOS DE VENTAS";
             this.ResumeLayout(false);
@@ -72,6 +59,5 @@ namespace Proyecto
         #endregion
 
         private System.Windows.Forms.Button btnClientes;
-        private System.Windows.Forms.Button button1;
     }
 }

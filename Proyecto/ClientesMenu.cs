@@ -19,7 +19,7 @@ namespace Proyecto
 
         private void BtnClientes_Click(object sender, EventArgs e)
         {
-            Cliente frm = new Cliente();
+            ClienteN frm = new ClienteN();
             frm.Show();
         }
 

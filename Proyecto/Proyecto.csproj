@@ -86,6 +86,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClienteN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClienteN.Designer.cs">
+      <DependentUpon>ClienteN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteMES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClienteMES.Designer.cs">
+      <DependentUpon>ClienteMES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCLIENTE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaCLIENTE.Designer.cs">
+      <DependentUpon>ListaCLIENTE.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +147,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClienteN.resx">
+      <DependentUpon>ClienteN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClienteMES.resx">
+      <DependentUpon>ClienteMES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaCLIENTE.resx">
+      <DependentUpon>ListaCLIENTE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaProveedores.resx">
       <DependentUpon>ListaProveedores.cs</DependentUpon>

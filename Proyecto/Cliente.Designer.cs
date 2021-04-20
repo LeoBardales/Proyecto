@@ -52,7 +52,7 @@ namespace Proyecto
             // 
             this.TxtLimite.Enabled = false;
             this.TxtLimite.Location = new System.Drawing.Point(58, 220);
-            this.TxtLimite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtLimite.Margin = new System.Windows.Forms.Padding(2);
             this.TxtLimite.Name = "TxtLimite";
             this.TxtLimite.Size = new System.Drawing.Size(143, 20);
             this.TxtLimite.TabIndex = 31;
@@ -71,7 +71,7 @@ namespace Proyecto
             // 
             this.TxtSaldo.Enabled = false;
             this.TxtSaldo.Location = new System.Drawing.Point(58, 197);
-            this.TxtSaldo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtSaldo.Margin = new System.Windows.Forms.Padding(2);
             this.TxtSaldo.Name = "TxtSaldo";
             this.TxtSaldo.Size = new System.Drawing.Size(143, 20);
             this.TxtSaldo.TabIndex = 29;
@@ -90,7 +90,7 @@ namespace Proyecto
             // 
             this.TxtSexo.Enabled = false;
             this.TxtSexo.Location = new System.Drawing.Point(51, 162);
-            this.TxtSexo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtSexo.Margin = new System.Windows.Forms.Padding(2);
             this.TxtSexo.Name = "TxtSexo";
             this.TxtSexo.Size = new System.Drawing.Size(143, 20);
             this.TxtSexo.TabIndex = 27;
@@ -109,7 +109,7 @@ namespace Proyecto
             // 
             this.TxtEC.Enabled = false;
             this.TxtEC.Location = new System.Drawing.Point(92, 132);
-            this.TxtEC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtEC.Margin = new System.Windows.Forms.Padding(2);
             this.TxtEC.Name = "TxtEC";
             this.TxtEC.Size = new System.Drawing.Size(143, 20);
             this.TxtEC.TabIndex = 25;
@@ -128,7 +128,7 @@ namespace Proyecto
             // 
             this.TxtDireccion.Enabled = false;
             this.TxtDireccion.Location = new System.Drawing.Point(78, 95);
-            this.TxtDireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtDireccion.Margin = new System.Windows.Forms.Padding(2);
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(245, 20);
             this.TxtDireccion.TabIndex = 23;
@@ -147,7 +147,7 @@ namespace Proyecto
             // 
             this.TxtTipo.Enabled = false;
             this.TxtTipo.Location = new System.Drawing.Point(46, 70);
-            this.TxtTipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtTipo.Margin = new System.Windows.Forms.Padding(2);
             this.TxtTipo.Name = "TxtTipo";
             this.TxtTipo.Size = new System.Drawing.Size(143, 20);
             this.TxtTipo.TabIndex = 21;
@@ -166,7 +166,7 @@ namespace Proyecto
             // 
             this.TxtNombre.Enabled = false;
             this.TxtNombre.Location = new System.Drawing.Point(60, 43);
-            this.TxtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(263, 20);
             this.TxtNombre.TabIndex = 19;
@@ -184,7 +184,7 @@ namespace Proyecto
             // TxtID
             // 
             this.TxtID.Location = new System.Drawing.Point(33, 10);
-            this.TxtID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtID.Margin = new System.Windows.Forms.Padding(2);
             this.TxtID.Name = "TxtID";
             this.TxtID.Size = new System.Drawing.Size(90, 20);
             this.TxtID.TabIndex = 17;
@@ -203,7 +203,7 @@ namespace Proyecto
             // BtnBuscar
             // 
             this.BtnBuscar.Location = new System.Drawing.Point(169, 9);
-            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(96, 19);
             this.BtnBuscar.TabIndex = 32;
@@ -233,9 +233,10 @@ namespace Proyecto
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TxtID);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Cliente";
             this.Text = "Cliente";
+            this.Load += new System.EventHandler(this.Cliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
