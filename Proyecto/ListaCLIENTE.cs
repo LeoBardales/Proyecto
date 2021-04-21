@@ -17,12 +17,9 @@ namespace Proyecto
         public ListaCLIENTE()
         {
             InitializeComponent();
-        }
-        private void ListaCliente_Load(object sender, EventArgs e)
-        {
             MostrarDatos();
-
         }
+       
         public void MostrarDatos()
         {
             SqlDataAdapter datos = new SqlDataAdapter("select *from ListaCliente", con.conectar);
@@ -30,5 +27,7 @@ namespace Proyecto
             datos.Fill(dt);
             dataGridView1.DataSource = dt;
         }
+
+        
     }
 }
