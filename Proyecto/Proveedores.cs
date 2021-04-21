@@ -143,35 +143,41 @@ namespace Proyecto
         private void Anterior_Click(object sender, EventArgs e)
         {
             dato = txtID.Text;
-            int id = Convert.ToInt32(dato);
-            --(id);
-            SqlCommand comando = new SqlCommand("execute spSelectProveedores @ID", con.conectar);
-            comando.Parameters.AddWithValue("@ID", id);
-            con.abrir();
-            SqlDataReader Registro = comando.ExecuteReader();
-            if (Registro.Read())
+            if (dato != "")
             {
-                txtID.Text = Registro["PROVEEDORID"].ToString();
-                txtNOMBRE.Text = Registro["NOMBRE"].ToString();
-                txtRTN.Text = Registro["RTN"].ToString();
-                txtCONTACTO.Text = Registro["CONTACTO"].ToString();
-                txtTELEFONO.Text = Registro["TELEFONO"].ToString();
-                txtEMAIL.Text = Registro["EMAIL"].ToString();
-                txtLIMITE.Text = Registro["LIMITE"].ToString();
-                txtSALDO.Text = Registro["SALDO"].ToString();
-                tipo = Registro["TIPOPROVEEDORID"].ToString();
-                actualizar(true);
+                int id = Convert.ToInt32(dato);
+                --(id);
+                SqlCommand comando = new SqlCommand("execute spSelectProveedores @ID", con.conectar);
+                comando.Parameters.AddWithValue("@ID", id);
+                con.abrir();
+                SqlDataReader Registro = comando.ExecuteReader();
+                if (Registro.Read())
+                {
+                    txtID.Text = Registro["PROVEEDORID"].ToString();
+                    txtNOMBRE.Text = Registro["NOMBRE"].ToString();
+                    txtRTN.Text = Registro["RTN"].ToString();
+                    txtCONTACTO.Text = Registro["CONTACTO"].ToString();
+                    txtTELEFONO.Text = Registro["TELEFONO"].ToString();
+                    txtEMAIL.Text = Registro["EMAIL"].ToString();
+                    txtLIMITE.Text = Registro["LIMITE"].ToString();
+                    txtSALDO.Text = Registro["SALDO"].ToString();
+                    tipo = Registro["TIPOPROVEEDORID"].ToString();
+                    actualizar(true);
 
-            }
-            else
-            {
-                MessageBox.Show("NO HAY MAS REGISTRO DE PROVEEDORES");
+                }
+                else
+                {
+                    MessageBox.Show("NO HAY MAS REGISTRO DE PROVEEDORES");
 
+                }
+                con.close();
+                if (tipo == "1") { cmbtipo.Text = "NACIONAL"; }
+                if (tipo == "2") { cmbtipo.Text = "INTERNACIONAL"; }
+                tipo = "";
             }
-            con.close();
-            if (tipo == "1") { cmbtipo.Text = "NACIONAL"; }
-            if (tipo == "2") { cmbtipo.Text = "INTERNACIONAL"; }
-            tipo = "";
+            
+           
+            
         }
 
         private void LblSaldo_Click(object sender, EventArgs e)
