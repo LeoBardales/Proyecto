@@ -307,6 +307,11 @@ namespace Proyecto
             ProveedorMes pr = new ProveedorMes();
             pr.Show();
         }
+
+        private void TxtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     
     
