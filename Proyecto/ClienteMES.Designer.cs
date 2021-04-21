@@ -56,10 +56,10 @@ namespace Proyecto
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.cmbmes.Location = new System.Drawing.Point(32, 64);
-            this.cmbmes.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbmes.Location = new System.Drawing.Point(43, 79);
+            this.cmbmes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbmes.Name = "cmbmes";
-            this.cmbmes.Size = new System.Drawing.Size(114, 27);
+            this.cmbmes.Size = new System.Drawing.Size(151, 29);
             this.cmbmes.TabIndex = 5;
             this.cmbmes.SelectedIndexChanged += new System.EventHandler(this.Cmbmes_SelectedIndexChanged);
             // 
@@ -68,10 +68,9 @@ namespace Proyecto
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(32, 40);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(43, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 18);
+            this.label1.Size = new System.Drawing.Size(52, 23);
             this.label1.TabIndex = 7;
             this.label1.Text = "Mes ";
             // 
@@ -80,10 +79,9 @@ namespace Proyecto
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(192, 40);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(256, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 18);
+            this.label2.Size = new System.Drawing.Size(47, 23);
             this.label2.TabIndex = 9;
             this.label2.Text = "Año";
             // 
@@ -91,10 +89,10 @@ namespace Proyecto
             // 
             this.cmdano.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdano.FormattingEnabled = true;
-            this.cmdano.Location = new System.Drawing.Point(192, 64);
-            this.cmdano.Margin = new System.Windows.Forms.Padding(2);
+            this.cmdano.Location = new System.Drawing.Point(256, 79);
+            this.cmdano.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmdano.Name = "cmdano";
-            this.cmdano.Size = new System.Drawing.Size(116, 27);
+            this.cmdano.Size = new System.Drawing.Size(153, 29);
             this.cmdano.TabIndex = 8;
             this.cmdano.SelectedIndexChanged += new System.EventHandler(this.Cmdano_SelectedIndexChanged);
             // 
@@ -118,8 +116,8 @@ namespace Proyecto
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 128);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 158);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -131,20 +129,22 @@ namespace Proyecto
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(328, 205);
+            this.dataGridView1.Size = new System.Drawing.Size(437, 252);
             this.dataGridView1.TabIndex = 10;
             // 
             // ClienteMES
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(341, 347);
+            this.ClientSize = new System.Drawing.Size(455, 427);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmdano);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbmes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ClienteMES";
             this.Text = "SALDO CLIENTE MES";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

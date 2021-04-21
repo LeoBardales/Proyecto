@@ -78,7 +78,8 @@ namespace Proyecto
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(1232, 369);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListaCLIENTE";
             this.Text = "LISTA CLIENTE";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
