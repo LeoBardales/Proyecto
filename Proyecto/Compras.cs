@@ -16,7 +16,7 @@ namespace Proyecto
         public Compras()
         {
             InitializeComponent();
-            MostrarComprasDatos();
+           
         }
         conexion con = new conexion();
         int compraID=0;
@@ -42,6 +42,8 @@ namespace Proyecto
 
         public void llenarArt()
         {
+            cmbArticulos.DataSource = null;
+            cmbArticulos.Items.Clear();
             SqlCommand comando = new SqlCommand("select *from ExistenciasArticulos", con.conectar);
 
             con.abrir();
@@ -49,8 +51,6 @@ namespace Proyecto
             while (Registro.Read())
             {
                 cmbArticulos.Items.Add(Registro["ID"].ToString());
-
-
             }
 
             con.close();
@@ -81,13 +81,48 @@ namespace Proyecto
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            if (txtDocumento.Text != "" && cmbTipo.Text != "" && cmbEstado.Text != "" && cmbProv.Text != "") { llenarArt(); desbloquear(true); }
+            if (txtDocumento.Text != "" && cmbTipo.Text != "" && cmbEstado.Text != "" && cmbProv.Text != "") {
+
+                String tipo = "";
+                String estado = "";
+                if (cmbTipo.Text == "CREDITO") { tipo = "C"; }
+                if (cmbTipo.Text == "CONTADO") { tipo = "R"; }
+                if (cmbEstado.Text == "FACTURADO") { estado = "F"; }
+                if (cmbEstado.Text == "PAGADO") { estado = "P"; }
+                try
+                {
+                    SqlCommand comando = new SqlCommand("execute spInsertCompra "+ cmbProv.Text + ","+ txtDocumento.Text + ",'"+tipo+"','"+estado+"'", con.conectar);
+
+                    con.abrir();
+                    SqlDataReader Registro = comando.ExecuteReader();
+                    if (Registro.Read())
+                    {
+                        compraID = Int32.Parse(Registro["ID"].ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("NO HAY MAS REGISTRO DE PROVEEDORES");
+
+                    }
+                    con.close();
+                    llenarArt(); desbloquear(true);
+                    TxtCompra.Text = compraID.ToString();
+                    Total();
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR: "+ex);
+                } 
+            }
             else { MessageBox.Show("DEBE RELLENAR TODOS LOS CAMPOS");};
             
         }
         public void MostrarComprasDatos()
         {
-            SqlDataAdapter datos = new SqlDataAdapter("select *from CompraActual(1)", con.conectar);
+            SqlDataAdapter datos = new SqlDataAdapter("select *from CompraActual("+compraID+")", con.conectar);
             DataTable dt = new DataTable();
             datos.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -96,6 +131,10 @@ namespace Proyecto
         public void desbloquear(Boolean opc) {
             btnCancelar.Enabled = opc;
             cmbArticulos.Enabled = opc;
+            txtTotal.Visible = opc;
+            TxtCompra.Visible = opc;
+            lblCompra.Visible = opc;
+            lblTotal.Visible = opc;
             txtDocumento.Enabled = !opc;
             cmbTipo.Enabled = !opc;
             cmbEstado.Enabled = !opc;
@@ -110,25 +149,168 @@ namespace Proyecto
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (cmbArticulos.Text != "" && TxtPrecio.Text != "" && txtCantidad.Text!="" && txtDescuento.Text!="") { MostrarComprasDatos(); }
+            if (cmbArticulos.Text != "" && TxtPrecio.Text != "" && txtCantidad.Text!="" && txtDescuento.Text!="") {
+
+                try
+                {
+                    SqlCommand comando = new SqlCommand("execute spInsertCompraDetalle " + compraID + "," + cmbArticulos.Text + "," + txtCantidad.Text + "," + TxtPrecio.Text + "," + txtDescuento.Text + "", con.conectar);
+                    con.abrir();
+                    comando.ExecuteNonQuery();
+                    con.close();
+                    MostrarComprasDatos();
+                    Total();
+                    cmbArticulos.Text = "";
+                    TxtPrecio.Text = "";
+                    txtCantidad.Text = "";
+                    txtDescuento.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR: " + ex);
+                }
+
+
+                }
             else { MessageBox.Show("DEBE RELLENAR TODOS LOS CAMPOS"); };
         }
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {
-            int fila = Int32.Parse(dataGridView1.CurrentRow.Index.ToString());
-
-            cmbArticulos.Text=dataGridView1.Rows[fila].Cells[0].Value.ToString();
-            txtCantidad.Text= dataGridView1.Rows[fila].Cells[2].Value.ToString();
-            TxtPrecio.Text= dataGridView1.Rows[fila].Cells[3].Value.ToString();
-            txtDescuento.Text= dataGridView1.Rows[fila].Cells[4].Value.ToString();
-            btnActualizar.Enabled = true;
+            
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (cmbArticulos.Text != "" && TxtPrecio.Text != "" && txtCantidad.Text != "" && txtDescuento.Text != "") { MessageBox.Show("Listo"); }
+            if (cmbArticulos.Text != "" && TxtPrecio.Text != "" && txtCantidad.Text != "" && txtDescuento.Text != "") {
+                string articulo, cantidad, precio, descuento;
+                articulo = cmbArticulos.Text;
+                cantidad = txtCantidad.Text;
+                precio = TxtPrecio.Text;
+                descuento = txtDescuento.Text;
+                try
+                {
+                    SqlCommand comando = new SqlCommand("execute spUpdateCompraDetalle @ID,@art,@cant,@precio,@desc", con.conectar);
+                    comando.Parameters.AddWithValue("@ID", compraID.ToString());
+                    comando.Parameters.AddWithValue("@art", articulo);
+                    comando.Parameters.AddWithValue("@cant", cantidad);
+                    comando.Parameters.AddWithValue("@precio", precio);
+                    comando.Parameters.AddWithValue("@desc", descuento);
+
+                    con.abrir();
+                    comando.ExecuteNonQuery();
+                    con.close();
+                    MessageBox.Show("Articulo Actualizar");
+                    MostrarComprasDatos();
+                    Total();
+                    cmbArticulos.Text = "";
+                    TxtPrecio.Text = "";
+                    txtCantidad.Text = "";
+                    txtDescuento.Text = "";
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR: " + ex);
+                }
+
+
+                 }
             else { MessageBox.Show("DEBE RELLENAR TODOS LOS CAMPOS"); };
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            
+                try
+                {
+                    SqlCommand comando = new SqlCommand("execute spDeleteCompra " + compraID + "", con.conectar);
+                    con.abrir();
+                    comando.ExecuteNonQuery();
+                    con.close();
+                    MessageBox.Show("Listo");
+                    cmbArticulos.Text = "";
+                    TxtPrecio.Text = "";
+                    txtCantidad.Text = "";
+                    txtDescuento.Text = "";
+                    desbloquear(false);
+                    btnActualizar.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    txtDocumento.Text = "";
+                    cmbProv.Text = "";
+                    cmbTipo.Text = "";
+                    cmbEstado.Text = "";
+                    dataGridView1.DataSource = null;
+                    dataGridView1.Columns.Clear();
+
+
+
+            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR: " + ex);
+                }
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (cmbArticulos.Text != "" && TxtPrecio.Text != "" && txtCantidad.Text != "" && txtDescuento.Text != "")
+            {
+                try
+                {
+                    SqlCommand comando = new SqlCommand("execute spDeleteCompraDetalle " + compraID + "," + cmbArticulos.Text + "", con.conectar);
+                    con.abrir();
+                    comando.ExecuteNonQuery();
+                    con.close();
+                    MessageBox.Show("Articulo Eliminado");
+                    MostrarComprasDatos();
+                    Total();
+                    cmbArticulos.Text = "";
+                    TxtPrecio.Text = "";
+                    txtCantidad.Text = "";
+                    txtDescuento.Text = "";
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR: " + ex);
+                }
+
+
+            }
+            else { MessageBox.Show("DEBE RELLENAR TODOS LOS CAMPOS"); };
+        }
+
+       
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int fila = Int32.Parse(dataGridView1.CurrentRow.Index.ToString());
+
+                cmbArticulos.Text = dataGridView1.Rows[fila].Cells[0].Value.ToString();
+                txtCantidad.Text = dataGridView1.Rows[fila].Cells[2].Value.ToString();
+                TxtPrecio.Text = dataGridView1.Rows[fila].Cells[3].Value.ToString();
+                txtDescuento.Text = dataGridView1.Rows[fila].Cells[5].Value.ToString();
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+            }
+            catch (Exception ex) { Console.WriteLine("Error: " + ex); }
+        }
+        public void Total() {
+            try
+            {
+                SqlCommand comando = new SqlCommand("select dbo.TotalCompra (" + compraID + ")", con.conectar);
+                con.abrir();
+                txtTotal.Text= comando.ExecuteScalar().ToString();
+                con.close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex);
+            }
         }
     }
 }

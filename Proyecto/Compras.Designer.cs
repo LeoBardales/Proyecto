@@ -52,6 +52,11 @@ namespace Proyecto
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TxtCompra = new System.Windows.Forms.TextBox();
+            this.lblCompra = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,6 +189,7 @@ namespace Proyecto
             this.btnCancelar.TabIndex = 25;
             this.btnCancelar.Text = "CANCELAR COMPRA";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label3
             // 
@@ -287,7 +293,7 @@ namespace Proyecto
             this.btnAgregar.Enabled = false;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAgregar.Location = new System.Drawing.Point(590, 238);
+            this.btnAgregar.Location = new System.Drawing.Point(590, 219);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(136, 28);
@@ -302,7 +308,7 @@ namespace Proyecto
             this.btnActualizar.Enabled = false;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnActualizar.Location = new System.Drawing.Point(592, 272);
+            this.btnActualizar.Location = new System.Drawing.Point(592, 253);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(134, 30);
@@ -345,7 +351,75 @@ namespace Proyecto
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(766, 218);
             this.dataGridView1.TabIndex = 38;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
+            // 
+            // TxtCompra
+            // 
+            this.TxtCompra.Enabled = false;
+            this.TxtCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCompra.Location = new System.Drawing.Point(519, 139);
+            this.TxtCompra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TxtCompra.Multiline = true;
+            this.TxtCompra.Name = "TxtCompra";
+            this.TxtCompra.Size = new System.Drawing.Size(109, 29);
+            this.TxtCompra.TabIndex = 40;
+            this.TxtCompra.Visible = false;
+            // 
+            // lblCompra
+            // 
+            this.lblCompra.AutoSize = true;
+            this.lblCompra.BackColor = System.Drawing.Color.Transparent;
+            this.lblCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompra.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCompra.Location = new System.Drawing.Point(527, 118);
+            this.lblCompra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCompra.Name = "lblCompra";
+            this.lblCompra.Size = new System.Drawing.Size(101, 18);
+            this.lblCompra.TabIndex = 39;
+            this.lblCompra.Text = "COMPRA ID";
+            this.lblCompra.Visible = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.White;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEliminar.Location = new System.Drawing.Point(590, 289);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(134, 30);
+            this.btnEliminar.TabIndex = 41;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(645, 139);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTotal.Multiline = true;
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(109, 29);
+            this.txtTotal.TabIndex = 43;
+            this.txtTotal.Visible = false;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTotal.Location = new System.Drawing.Point(653, 118);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(60, 18);
+            this.lblTotal.TabIndex = 42;
+            this.lblTotal.Text = "TOTAL";
+            this.lblTotal.Visible = false;
             // 
             // Compras
             // 
@@ -353,6 +427,11 @@ namespace Proyecto
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(790, 555);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.TxtCompra);
+            this.Controls.Add(this.lblCompra);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
@@ -407,5 +486,10 @@ namespace Proyecto
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox TxtCompra;
+        private System.Windows.Forms.Label lblCompra;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label lblTotal;
     }
 }
