@@ -22,6 +22,12 @@ namespace Proyecto
             Proveedores frm = new Proveedores();
             frm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Compras c = new Compras();
+            c.Show();
+        }
     }
  }
 

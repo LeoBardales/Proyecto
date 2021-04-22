@@ -82,7 +82,7 @@ namespace Proyecto
             this.lblID.Location = new System.Drawing.Point(608, 5);
             this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(23, 16);
+            this.lblID.Size = new System.Drawing.Size(28, 20);
             this.lblID.TabIndex = 1;
             this.lblID.Text = "ID";
             // 
@@ -95,7 +95,7 @@ namespace Proyecto
             this.lblNombre.Location = new System.Drawing.Point(88, 24);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(67, 15);
+            this.lblNombre.Size = new System.Drawing.Size(81, 18);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "NOMBRE";
             // 
@@ -130,7 +130,7 @@ namespace Proyecto
             this.lblRTN.Location = new System.Drawing.Point(120, 52);
             this.lblRTN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRTN.Name = "lblRTN";
-            this.lblRTN.Size = new System.Drawing.Size(35, 15);
+            this.lblRTN.Size = new System.Drawing.Size(42, 18);
             this.lblRTN.TabIndex = 5;
             this.lblRTN.Text = "RTN";
             // 
@@ -143,7 +143,7 @@ namespace Proyecto
             this.lblCONTACTO.Location = new System.Drawing.Point(78, 80);
             this.lblCONTACTO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCONTACTO.Name = "lblCONTACTO";
-            this.lblCONTACTO.Size = new System.Drawing.Size(79, 15);
+            this.lblCONTACTO.Size = new System.Drawing.Size(100, 18);
             this.lblCONTACTO.TabIndex = 6;
             this.lblCONTACTO.Text = "CONTACTO";
             // 
@@ -156,7 +156,7 @@ namespace Proyecto
             this.lblTELEFONO.Location = new System.Drawing.Point(78, 108);
             this.lblTELEFONO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTELEFONO.Name = "lblTELEFONO";
-            this.lblTELEFONO.Size = new System.Drawing.Size(79, 15);
+            this.lblTELEFONO.Size = new System.Drawing.Size(97, 18);
             this.lblTELEFONO.TabIndex = 7;
             this.lblTELEFONO.Text = "TELEFONO";
             this.lblTELEFONO.Click += new System.EventHandler(this.Label3_Click);
@@ -170,7 +170,7 @@ namespace Proyecto
             this.lblEMAIL.Location = new System.Drawing.Point(110, 135);
             this.lblEMAIL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEMAIL.Name = "lblEMAIL";
-            this.lblEMAIL.Size = new System.Drawing.Size(48, 15);
+            this.lblEMAIL.Size = new System.Drawing.Size(56, 18);
             this.lblEMAIL.TabIndex = 8;
             this.lblEMAIL.Text = "EMAIL";
             // 
@@ -251,7 +251,7 @@ namespace Proyecto
             this.lblLimite.Location = new System.Drawing.Point(206, 203);
             this.lblLimite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLimite.Name = "lblLimite";
-            this.lblLimite.Size = new System.Drawing.Size(56, 16);
+            this.lblLimite.Size = new System.Drawing.Size(68, 20);
             this.lblLimite.TabIndex = 15;
             this.lblLimite.Text = "LIMITE";
             // 
@@ -264,7 +264,7 @@ namespace Proyecto
             this.lblSaldo.Location = new System.Drawing.Point(358, 203);
             this.lblSaldo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(52, 15);
+            this.lblSaldo.Size = new System.Drawing.Size(63, 18);
             this.lblSaldo.TabIndex = 16;
             this.lblSaldo.Text = "SALDO";
             this.lblSaldo.Click += new System.EventHandler(this.LblSaldo_Click);
@@ -315,7 +315,7 @@ namespace Proyecto
             this.label1.Location = new System.Drawing.Point(121, 160);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.Size = new System.Drawing.Size(46, 18);
             this.label1.TabIndex = 20;
             this.label1.Text = "TIPO";
             // 
@@ -327,7 +327,7 @@ namespace Proyecto
             "INTERNACIONAL"});
             this.cmbtipo.Location = new System.Drawing.Point(163, 157);
             this.cmbtipo.Name = "cmbtipo";
-            this.cmbtipo.Size = new System.Drawing.Size(186, 23);
+            this.cmbtipo.Size = new System.Drawing.Size(186, 26);
             this.cmbtipo.TabIndex = 21;
             // 
             // btnSM
@@ -420,9 +420,9 @@ namespace Proyecto
             // 
             // Proveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(48)))));
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(740, 289);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
