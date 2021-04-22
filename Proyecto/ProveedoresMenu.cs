@@ -28,6 +28,12 @@ namespace Proyecto
             Compras c = new Compras();
             c.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Articulos a = new Articulos();
+            a.Show();
+        }
     }
  }
 

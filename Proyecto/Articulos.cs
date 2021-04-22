@@ -44,5 +44,11 @@ namespace Proyecto
             if (cmbOpc.Text=="TODOS") { MostrarAllDatos(); }
             if (cmbOpc.Text == "LISTOS PARA COMPRAS") { MostrarComprasDatos(); }
         }
+
+        private void BtnCompras_Click(object sender, EventArgs e)
+        {
+            Compras c = new Compras();
+            c.Show();
+        }
     }
 }
