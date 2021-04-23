@@ -23,10 +23,12 @@ namespace Proyecto
             frm.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+
+        private void VENTAS_Click(object sender, EventArgs e)
         {
-            SaldoCdia frm = new SaldoCdia();
-            frm.Show();
+            Ventas ventas = new Ventas();
+            ventas.Show();
         }
     }
 }
