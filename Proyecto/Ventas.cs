@@ -405,6 +405,14 @@ namespace Proyecto
             }
             else { MessageBox.Show("CAMPOS REQUERIDOS: 'ARTICULO'"); }
         }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            Botones(false);
+            limpiarAll();
+            btnELIMINAR.Enabled = false;
+            
+        }
     }
   
    
