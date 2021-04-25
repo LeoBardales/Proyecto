@@ -69,15 +69,37 @@ namespace Proyecto
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-            CargandoClientes();
-            Articulos();
+            
+           
             con.close();
+
+            if (cmbCLIENTE.Text == "") {
+                CargandoClientes();
+                Articulos();
+            }
+                
+                if (cmbCLIENTE.Text == "0")
+                {
+                    
+                    
+                    cmbPAGO.Enabled = false;
+                    cmbTIPOVENTA.Enabled = false;
+
+                cmbPAGO.Text = "CONTADO";
+                cmbTIPOVENTA.Text = "DETALLE";
+
+                    
+                }else {
+                cmbPAGO.Enabled = true;
+                cmbTIPOVENTA.Enabled = true;
+                limpiarAll();
+            }
+            
         }
 
         public void Botones(Boolean b)
         {
             btnINGRESARPRODUCTOS.Enabled = b;
-            btnACTUALIZARVENTA.Enabled = b;
             btnlimpiar.Enabled = b;
             btnCANCELAR.Enabled = b;
             btnVENTA.Enabled = !b;
@@ -89,24 +111,6 @@ namespace Proyecto
         }
 
         
-
-
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        public void tabla()
-        {
-
-
-        }
         int ventaID = 0;
         private void BtnVENTA_Click(object sender, EventArgs e)
         {
@@ -117,7 +121,7 @@ namespace Proyecto
                 int tipoVenta = 0;
                 int clienteID = Int32.Parse(cmbCLIENTE.Text);
                 if (cmbTIPOVENTA.Text == "AL POR MAYOR") { tipoVenta = 1; }
-                if (cmbTIPOVENTA.Text == "AL DETALLE") { tipoVenta = 2; }
+                if (cmbTIPOVENTA.Text == "DETALLE") { tipoVenta = 2; }
                 if (cmbPAGO.Text == "CREDITO") { pago = "c"; }
                 if (cmbPAGO.Text == "CONTADO") { pago = "r"; }
                 try {
@@ -177,6 +181,7 @@ namespace Proyecto
                     lblexist.Text = "";
                     txtDESCUENTO.Text = "";
                     cmbARTICULO.Text = "";
+                    btnELIMINAR.Enabled = true;
                    }
                 catch(Exception ex) { MessageBox.Show("OCURRIO UN ERROR: "+ex); }
             }
@@ -184,39 +189,7 @@ namespace Proyecto
             
         }
 
-        private void BtnACTUALIZAR_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void BtnELIMINAR_Click(object sender, EventArgs e)
-        {
-            
-            
-
-
-        }
-
-        private void BtnVENTAELIMINAR_Click(object sender, EventArgs e)
-        {
-
-            try {
-                SqlCommand comando = new SqlCommand("execute spDeleteFactura @ID", con.conectar);
-                comando.Parameters.AddWithValue("@ID", ventaID);
-                MessageBox.Show("ELINIDADO CORRECTAMENTE");
-            }
-            catch(Exception ex) { MessageBox.Show("Error: "+ex); }
-            
-
-        }
-        private void BtnCANCELAR_Click(object sender, EventArgs e)
-        {
-            
-            Limpiar();
-            btnVENTA.Enabled = true;
-            btnELIMINAR.Enabled = true;
-        }
-
+      
         public void Limpiar() {
             txtCANTIDAD.Text = "";
             txtDESCUENTO.Text = "";
@@ -226,63 +199,7 @@ namespace Proyecto
             cmbTIPOVENTA.Text = "";
                 }
 
-        private void BtnACTUALIZARVENTA_Click(object sender, EventArgs e)
-        {
-            
-            if (cmbCLIENTE.Text != "" && cmbPAGO.Text != "" && cmbTIPOVENTA.Text != "" )
-            {
-
-                String pago = "";
-                int tipoVenta = 0;
-                int clienteID = Int32.Parse(cmbCLIENTE.Text);
-                if (cmbTIPOVENTA.Text == "AL POR MAYOR") { tipoVenta = 1; }
-                if (cmbTIPOVENTA.Text == "AL DETALLE") { tipoVenta = 2; }
-                if (cmbPAGO.Text == "CONTADO") { pago = "c"; }
-                if (cmbPAGO.Text == "CREDITO") { pago = "r"; }
-
-
-                SqlCommand comando = new SqlCommand("execute spUpdateFacturaDatos "+ventaID+", "+clienteID+", "+tipoVenta+", '"+pago+"'", con.conectar);
-                
-                MessageBox.Show("DATOS ACTUALIZADOS");
-
-                                
-                btnVENTA.Enabled = false;
-                btnINGRESARPRODUCTOS.Enabled = true;
-                txtCANTIDAD.Enabled = true;
-                txtDESCUENTO.Enabled = true;
-                cmbARTICULO.Enabled = true;
-
-            }
-            else { MessageBox.Show("INGRESE TODOS LOS DATOS"); }
-
-        
-        }
-
-        
-
-        private void BtnACTUALIZARDETALLEVENTA_Click(object sender, EventArgs e)
-        {
-            if (cmbARTICULO.Text != "" && txtDESCUENTO.Text != "" && txtCANTIDAD.Text != "")
-            {
-
-
-                try
-                {
-                    SqlCommand comando = new SqlCommand("execute spUpdateFacDetalle" + ventaID + "," + cmbARTICULO.Text + "," + txtCANTIDAD.Text + "," + txtDESCUENTO.Text + "", con.conectar);
-                    con.abrir();
-                    comando.ExecuteNonQuery();
-                    MostrarDatos();
-                    MessageBox.Show("DATOS INGRESADOS");
-                }
-                catch { MessageBox.Show("OCURRIO UN ERROR"); }
-            }
-            else { MessageBox.Show("INGRESE TODOS LOS DATOS"); }
-        }
-
-        private void btnlimpiar_Click(object sender, EventArgs e)
-        {
-
-        }
+              
 
         private void btnCANCELAR_Click_1(object sender, EventArgs e)
         {
@@ -367,10 +284,7 @@ namespace Proyecto
 
         
 
-        private void btnELIMINAR_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void dataGridView2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -406,9 +320,90 @@ namespace Proyecto
             catch { MessageBox.Show("NO SE PUDO actualizar"); }
         }
 
-        private void btnACTUALIZARVENTA_Click_1(object sender, EventArgs e)
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                
+                int fila = Int32.Parse(dataGridView1.CurrentRow.Index.ToString());
+               
+                String tipov = "";
+                String tipo = "";
+                String cliente = cmbCLIENTE.Text;
+                int tv = 0;
+                String t = "";
+                int venta = 0;
 
+                cmbPAGO.Text = "";
+                cmbTIPOVENTA.Text = "";
+
+                venta = Int32.Parse(dataGridView1.Rows[fila].Cells[0].Value.ToString());
+                
+                tipov = dataGridView1.Rows[fila].Cells[2].Value.ToString();
+                tipo = dataGridView1.Rows[fila].Cells[3].Value.ToString();
+              
+               
+
+                if (tipov == "AL POR MAYOR"){
+                    tv = 1;
+                }
+
+                if (tipov == "DETALLE")
+                {
+                    tv = 2;
+                }
+
+                if (tipo == "CREDITO")
+                {
+                    t = "c";
+                }
+
+                if (tipo == "CONTADO")
+                {
+                    t = "r";
+                }
+
+                
+                SqlCommand comando1 = new SqlCommand("execute spUpdateFacturaDatos " + venta + ",'" + cliente + "'," + tv + ",'" + t + "'", con.conectar);
+                con.abrir();
+                comando1.ExecuteNonQuery();
+                con.close();
+                MessageBox.Show("ACTUALIZADO CORRECTAMENTE");
+                MostrarDatos();
+                cmbCLIENTE.Text = "";
+                cmbPAGO.Text = "";
+                cmbTIPOVENTA.Text = "";
+
+
+
+
+
+            }
+            catch { MessageBox.Show("NO SE PUDO actualizar"); }
+        }
+
+        private void BtnELIMINAR_Click(object sender, EventArgs e)
+        {
+            if (cmbARTICULO.Text != "")            
+            {
+                String articulo = cmbARTICULO.Text;
+                try
+                {
+
+                    SqlCommand comando = new SqlCommand("execute spDeleteFacDetalle " + ventaID + "," + articulo +"", con.conectar);
+                    con.abrir();
+                    comando.ExecuteNonQuery();
+                    con.close();
+                    MessageBox.Show("ELINIDADO CORRECTAMENTE");
+                    MostrarDatos();
+                    cmbARTICULO.Text = "";
+                    txtCANTIDAD.Text = "";
+                    txtDESCUENTO.Text = "";
+                    
+                }
+                catch { MessageBox.Show("NO SE PUDO ELIMINAR"); }
+            }
+            else { MessageBox.Show("CAMPOS REQUERIDOS: 'ARTICULO'"); }
         }
     }
   
