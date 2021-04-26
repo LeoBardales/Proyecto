@@ -50,13 +50,14 @@ namespace Proyecto
             this.TxtPrecio = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TxtCompra = new System.Windows.Forms.TextBox();
             this.lblCompra = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.btnactcompra = new System.Windows.Forms.Button();
+            this.btnlimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,10 +67,10 @@ namespace Proyecto
             this.cmbProv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProv.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProv.FormattingEnabled = true;
-            this.cmbProv.Location = new System.Drawing.Point(24, 35);
-            this.cmbProv.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbProv.Location = new System.Drawing.Point(32, 43);
+            this.cmbProv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbProv.Name = "cmbProv";
-            this.cmbProv.Size = new System.Drawing.Size(114, 25);
+            this.cmbProv.Size = new System.Drawing.Size(151, 30);
             this.cmbProv.TabIndex = 5;
             // 
             // lblID
@@ -78,20 +79,21 @@ namespace Proyecto
             this.lblID.BackColor = System.Drawing.Color.Transparent;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblID.Location = new System.Drawing.Point(24, 16);
+            this.lblID.Location = new System.Drawing.Point(32, 20);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(122, 16);
+            this.lblID.Size = new System.Drawing.Size(150, 20);
             this.lblID.TabIndex = 6;
             this.lblID.Text = "ID PROVEEDOR";
             // 
             // txtDocumento
             // 
             this.txtDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumento.Location = new System.Drawing.Point(154, 36);
-            this.txtDocumento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDocumento.Location = new System.Drawing.Point(205, 44);
+            this.txtDocumento.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtDocumento.Multiline = true;
             this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(127, 24);
+            this.txtDocumento.Size = new System.Drawing.Size(168, 29);
             this.txtDocumento.TabIndex = 8;
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPres);
             // 
@@ -101,9 +103,10 @@ namespace Proyecto
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNombre.Location = new System.Drawing.Point(160, 16);
+            this.lblNombre.Location = new System.Drawing.Point(213, 20);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(121, 15);
+            this.lblNombre.Size = new System.Drawing.Size(149, 18);
             this.lblNombre.TabIndex = 7;
             this.lblNombre.Text = "No. DOCUMENTO";
             // 
@@ -113,9 +116,10 @@ namespace Proyecto
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(336, 16);
+            this.label1.Location = new System.Drawing.Point(448, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 16);
+            this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "TIPO";
             // 
@@ -128,10 +132,10 @@ namespace Proyecto
             this.cmbTipo.Items.AddRange(new object[] {
             "CREDITO",
             "CONTADO"});
-            this.cmbTipo.Location = new System.Drawing.Point(302, 35);
-            this.cmbTipo.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTipo.Location = new System.Drawing.Point(403, 43);
+            this.cmbTipo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(124, 25);
+            this.cmbTipo.Size = new System.Drawing.Size(164, 30);
             this.cmbTipo.TabIndex = 9;
             // 
             // label2
@@ -140,9 +144,10 @@ namespace Proyecto
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(467, 15);
+            this.label2.Location = new System.Drawing.Point(623, 18);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 16);
+            this.label2.Size = new System.Drawing.Size(84, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "ESTADO";
             // 
@@ -155,10 +160,10 @@ namespace Proyecto
             this.cmbEstado.Items.AddRange(new object[] {
             "FACTURADO",
             "PAGADO"});
-            this.cmbEstado.Location = new System.Drawing.Point(442, 36);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbEstado.Location = new System.Drawing.Point(589, 44);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(124, 25);
+            this.cmbEstado.Size = new System.Drawing.Size(164, 30);
             this.cmbEstado.TabIndex = 11;
             // 
             // btnCrear
@@ -166,10 +171,10 @@ namespace Proyecto
             this.btnCrear.BackColor = System.Drawing.Color.White;
             this.btnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCrear.Location = new System.Drawing.Point(24, 93);
-            this.btnCrear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCrear.Location = new System.Drawing.Point(32, 114);
+            this.btnCrear.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(150, 30);
+            this.btnCrear.Size = new System.Drawing.Size(200, 37);
             this.btnCrear.TabIndex = 24;
             this.btnCrear.Text = "CREAR COMPRA";
             this.btnCrear.UseVisualStyleBackColor = false;
@@ -181,10 +186,10 @@ namespace Proyecto
             this.btnCancelar.Enabled = false;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelar.Location = new System.Drawing.Point(202, 93);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelar.Location = new System.Drawing.Point(269, 114);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(172, 30);
+            this.btnCancelar.Size = new System.Drawing.Size(229, 37);
             this.btnCancelar.TabIndex = 25;
             this.btnCancelar.Text = "CANCELAR COMPRA";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -196,9 +201,10 @@ namespace Proyecto
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(28, 185);
+            this.label3.Location = new System.Drawing.Point(37, 228);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 16);
+            this.label3.Size = new System.Drawing.Size(126, 20);
             this.label3.TabIndex = 27;
             this.label3.Text = "ID ARTICULO";
             // 
@@ -208,10 +214,10 @@ namespace Proyecto
             this.cmbArticulos.Enabled = false;
             this.cmbArticulos.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbArticulos.FormattingEnabled = true;
-            this.cmbArticulos.Location = new System.Drawing.Point(28, 204);
-            this.cmbArticulos.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbArticulos.Location = new System.Drawing.Point(37, 251);
+            this.cmbArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbArticulos.Name = "cmbArticulos";
-            this.cmbArticulos.Size = new System.Drawing.Size(96, 25);
+            this.cmbArticulos.Size = new System.Drawing.Size(127, 30);
             this.cmbArticulos.TabIndex = 26;
             // 
             // label4
@@ -220,9 +226,10 @@ namespace Proyecto
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(154, 186);
+            this.label4.Location = new System.Drawing.Point(205, 229);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 15);
+            this.label4.Size = new System.Drawing.Size(90, 18);
             this.label4.TabIndex = 28;
             this.label4.Text = "CANTIDAD";
             // 
@@ -232,9 +239,10 @@ namespace Proyecto
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(254, 186);
+            this.label5.Location = new System.Drawing.Point(339, 229);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 15);
+            this.label5.Size = new System.Drawing.Size(71, 18);
             this.label5.TabIndex = 30;
             this.label5.Text = "PRECIO";
             // 
@@ -242,11 +250,11 @@ namespace Proyecto
             // 
             this.txtDescuento.Enabled = false;
             this.txtDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescuento.Location = new System.Drawing.Point(340, 206);
-            this.txtDescuento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDescuento.Location = new System.Drawing.Point(453, 254);
+            this.txtDescuento.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtDescuento.Multiline = true;
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(83, 24);
+            this.txtDescuento.Size = new System.Drawing.Size(109, 29);
             this.txtDescuento.TabIndex = 33;
             // 
             // label6
@@ -255,9 +263,10 @@ namespace Proyecto
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(338, 186);
+            this.label6.Location = new System.Drawing.Point(451, 229);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 15);
+            this.label6.Size = new System.Drawing.Size(112, 18);
             this.label6.TabIndex = 32;
             this.label6.Text = "DESCUENTO";
             // 
@@ -265,22 +274,22 @@ namespace Proyecto
             // 
             this.TxtPrecio.Enabled = false;
             this.TxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPrecio.Location = new System.Drawing.Point(242, 206);
-            this.TxtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtPrecio.Location = new System.Drawing.Point(323, 254);
+            this.TxtPrecio.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.TxtPrecio.Multiline = true;
             this.TxtPrecio.Name = "TxtPrecio";
-            this.TxtPrecio.Size = new System.Drawing.Size(83, 24);
+            this.TxtPrecio.Size = new System.Drawing.Size(109, 29);
             this.TxtPrecio.TabIndex = 34;
             // 
             // txtCantidad
             // 
             this.txtCantidad.Enabled = false;
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(146, 206);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCantidad.Location = new System.Drawing.Point(195, 254);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtCantidad.Multiline = true;
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(83, 24);
+            this.txtCantidad.Size = new System.Drawing.Size(109, 29);
             this.txtCantidad.TabIndex = 35;
             // 
             // btnAgregar
@@ -289,29 +298,14 @@ namespace Proyecto
             this.btnAgregar.Enabled = false;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAgregar.Location = new System.Drawing.Point(442, 178);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregar.Location = new System.Drawing.Point(589, 219);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(102, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(136, 28);
             this.btnAgregar.TabIndex = 36;
             this.btnAgregar.Text = "AGREGAR";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.White;
-            this.btnActualizar.Enabled = false;
-            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnActualizar.Location = new System.Drawing.Point(444, 206);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(100, 24);
-            this.btnActualizar.TabIndex = 37;
-            this.btnActualizar.Text = "ACTUALIZAR";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // dataGridView1
             // 
@@ -333,8 +327,8 @@ namespace Proyecto
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.Azure;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 264);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 325);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -346,20 +340,20 @@ namespace Proyecto
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(574, 177);
+            this.dataGridView1.Size = new System.Drawing.Size(765, 218);
             this.dataGridView1.TabIndex = 38;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // TxtCompra
             // 
             this.TxtCompra.Enabled = false;
             this.TxtCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCompra.Location = new System.Drawing.Point(389, 113);
-            this.TxtCompra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtCompra.Location = new System.Drawing.Point(519, 139);
+            this.TxtCompra.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.TxtCompra.Multiline = true;
             this.TxtCompra.Name = "TxtCompra";
-            this.TxtCompra.Size = new System.Drawing.Size(83, 24);
+            this.TxtCompra.Size = new System.Drawing.Size(109, 29);
             this.TxtCompra.TabIndex = 40;
             this.TxtCompra.Visible = false;
             // 
@@ -369,9 +363,10 @@ namespace Proyecto
             this.lblCompra.BackColor = System.Drawing.Color.Transparent;
             this.lblCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompra.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCompra.Location = new System.Drawing.Point(395, 96);
+            this.lblCompra.Location = new System.Drawing.Point(527, 118);
+            this.lblCompra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCompra.Name = "lblCompra";
-            this.lblCompra.Size = new System.Drawing.Size(83, 15);
+            this.lblCompra.Size = new System.Drawing.Size(101, 18);
             this.lblCompra.TabIndex = 39;
             this.lblCompra.Text = "COMPRA ID";
             this.lblCompra.Visible = false;
@@ -382,10 +377,10 @@ namespace Proyecto
             this.btnEliminar.Enabled = false;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEliminar.Location = new System.Drawing.Point(442, 235);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminar.Location = new System.Drawing.Point(589, 254);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 24);
+            this.btnEliminar.Size = new System.Drawing.Size(133, 30);
             this.btnEliminar.TabIndex = 41;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -395,11 +390,11 @@ namespace Proyecto
             // 
             this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(484, 113);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTotal.Location = new System.Drawing.Point(645, 139);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtTotal.Multiline = true;
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(83, 24);
+            this.txtTotal.Size = new System.Drawing.Size(109, 29);
             this.txtTotal.TabIndex = 43;
             this.txtTotal.Visible = false;
             // 
@@ -409,26 +404,57 @@ namespace Proyecto
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTotal.Location = new System.Drawing.Point(490, 96);
+            this.lblTotal.Location = new System.Drawing.Point(653, 118);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(49, 15);
+            this.lblTotal.Size = new System.Drawing.Size(60, 18);
             this.lblTotal.TabIndex = 42;
             this.lblTotal.Text = "TOTAL";
             this.lblTotal.Visible = false;
             // 
+            // btnactcompra
+            // 
+            this.btnactcompra.BackColor = System.Drawing.Color.White;
+            this.btnactcompra.Enabled = false;
+            this.btnactcompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnactcompra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnactcompra.Location = new System.Drawing.Point(32, 167);
+            this.btnactcompra.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnactcompra.Name = "btnactcompra";
+            this.btnactcompra.Size = new System.Drawing.Size(244, 37);
+            this.btnactcompra.TabIndex = 44;
+            this.btnactcompra.Text = "ACTUALIZAR COMPRA";
+            this.btnactcompra.UseVisualStyleBackColor = false;
+            this.btnactcompra.Click += new System.EventHandler(this.btnactcompra_Click);
+            // 
+            // btnlimpiar
+            // 
+            this.btnlimpiar.BackColor = System.Drawing.Color.White;
+            this.btnlimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlimpiar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnlimpiar.Location = new System.Drawing.Point(284, 167);
+            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnlimpiar.Name = "btnlimpiar";
+            this.btnlimpiar.Size = new System.Drawing.Size(139, 37);
+            this.btnlimpiar.TabIndex = 45;
+            this.btnlimpiar.Text = "LIPIAR";
+            this.btnlimpiar.UseVisualStyleBackColor = false;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
+            // 
             // Compras
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(592, 451);
+            this.ClientSize = new System.Drawing.Size(789, 555);
+            this.Controls.Add(this.btnlimpiar);
+            this.Controls.Add(this.btnactcompra);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.TxtCompra);
             this.Controls.Add(this.lblCompra);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.TxtPrecio);
@@ -449,7 +475,7 @@ namespace Proyecto
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.cmbProv);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Compras";
             this.Text = "Compras";
             this.Load += new System.EventHandler(this.Compras_Load);
@@ -480,12 +506,13 @@ namespace Proyecto
         private System.Windows.Forms.TextBox TxtPrecio;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox TxtCompra;
         private System.Windows.Forms.Label lblCompra;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Button btnactcompra;
+        private System.Windows.Forms.Button btnlimpiar;
     }
 }

@@ -135,15 +135,13 @@ namespace Proyecto
             TxtCompra.Visible = opc;
             lblCompra.Visible = opc;
             lblTotal.Visible = opc;
-            txtDocumento.Enabled = !opc;
-            cmbTipo.Enabled = !opc;
-            cmbEstado.Enabled = !opc;
-            cmbProv.Enabled = !opc;
             btnCrear.Enabled = !opc;
             btnAgregar.Enabled = opc;
             TxtPrecio.Enabled = opc;
             txtCantidad.Enabled = opc;
             txtDescuento.Enabled = opc;
+            btnactcompra.Enabled = opc;
+
 
         }
 
@@ -174,10 +172,7 @@ namespace Proyecto
             else { MessageBox.Show("DEBE RELLENAR TODOS LOS CAMPOS"); };
         }
 
-        private void dataGridView1_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -234,7 +229,6 @@ namespace Proyecto
                     txtCantidad.Text = "";
                     txtDescuento.Text = "";
                     desbloquear(false);
-                    btnActualizar.Enabled = false;
                     btnEliminar.Enabled = false;
                     txtDocumento.Text = "";
                     cmbProv.Text = "";
@@ -294,7 +288,6 @@ namespace Proyecto
                 txtCantidad.Text = dataGridView1.Rows[fila].Cells[2].Value.ToString();
                 TxtPrecio.Text = dataGridView1.Rows[fila].Cells[3].Value.ToString();
                 txtDescuento.Text = dataGridView1.Rows[fila].Cells[5].Value.ToString();
-                btnActualizar.Enabled = true;
                 btnEliminar.Enabled = true;
             }
             catch (Exception ex) { Console.WriteLine("Error: " + ex); }
@@ -306,6 +299,84 @@ namespace Proyecto
                 con.abrir();
                 txtTotal.Text= comando.ExecuteScalar().ToString();
                 con.close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex);
+            }
+        }
+
+        private void btnactcompra_Click(object sender, EventArgs e)
+        {
+            String tipo = "";
+            String estado = "";
+            if (cmbTipo.Text == "CREDITO") { tipo = "C"; }
+            if (cmbTipo.Text == "CONTADO") { tipo = "R"; }
+            if (cmbEstado.Text == "FACTURADO") { estado = "F"; }
+            if (cmbEstado.Text == "PAGADO") { estado = "P"; }
+
+            try {
+                SqlCommand comando = new SqlCommand("execute spUpdateCompra @ID,@proveedor,@doc,@tipo,@estado ", con.conectar);
+                comando.Parameters.AddWithValue("@ID", compraID.ToString());
+                comando.Parameters.AddWithValue("@proveedor", cmbProv.Text);
+                comando.Parameters.AddWithValue("@doc", txtDocumento.Text);
+                comando.Parameters.AddWithValue("@tipo", tipo);
+                comando.Parameters.AddWithValue("@estado", estado);
+                con.abrir();
+                comando.ExecuteNonQuery();
+                con.close();
+                MessageBox.Show("ACTUALIZADO CORRECTAMENTE");
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Error: "+ex);
+            }
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            cmbArticulos.Text = "";
+            TxtPrecio.Text = "";
+            txtCantidad.Text = "";
+            txtDescuento.Text = "";
+            desbloquear(false);
+            btnEliminar.Enabled = false;
+            txtDocumento.Text = "";
+            cmbProv.Text = "";
+            cmbTipo.Text = "";
+            cmbEstado.Text = "";
+            dataGridView1.DataSource = null;
+            dataGridView1.Columns.Clear();
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                String articulo = "", cantidad = "", precio = "", descuento = "";
+                int fila = Int32.Parse(dataGridView1.CurrentRow.Index.ToString());
+                articulo = dataGridView1.Rows[fila].Cells[0].Value.ToString();
+                cantidad = dataGridView1.Rows[fila].Cells[2].Value.ToString();
+                precio = dataGridView1.Rows[fila].Cells[3].Value.ToString();
+                descuento = dataGridView1.Rows[fila].Cells[5].Value.ToString();
+
+                SqlCommand comando = new SqlCommand("execute spUpdateCompraDetalle @ID,@art,@cant,@precio,@desc", con.conectar);
+                comando.Parameters.AddWithValue("@ID", compraID.ToString());
+                comando.Parameters.AddWithValue("@art", articulo);
+                comando.Parameters.AddWithValue("@cant", cantidad);
+                comando.Parameters.AddWithValue("@precio", precio);
+                comando.Parameters.AddWithValue("@desc", descuento);
+
+                con.abrir();
+                comando.ExecuteNonQuery();
+                con.close();
+                MostrarComprasDatos();
+                Total();
+                cmbArticulos.Text = "";
+                TxtPrecio.Text = "";
+                txtCantidad.Text = "";
+                txtDescuento.Text = "";
+
+
             }
             catch (Exception ex)
             {

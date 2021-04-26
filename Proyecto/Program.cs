@@ -16,7 +16,7 @@ namespace Proyecto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Ventas());
+            Application.Run(new Compras());
             //Application.Run(new Form1());
 
         }
