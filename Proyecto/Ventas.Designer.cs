@@ -143,7 +143,7 @@ namespace Proyecto
             // 
             this.btnVENTA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnVENTA.Location = new System.Drawing.Point(595, 34);
-            this.btnVENTA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVENTA.Margin = new System.Windows.Forms.Padding(4);
             this.btnVENTA.Name = "btnVENTA";
             this.btnVENTA.Size = new System.Drawing.Size(191, 44);
             this.btnVENTA.TabIndex = 19;
@@ -208,7 +208,7 @@ namespace Proyecto
             this.btnCANCELAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnCANCELAR.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.btnCANCELAR.Location = new System.Drawing.Point(805, 34);
-            this.btnCANCELAR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCANCELAR.Margin = new System.Windows.Forms.Padding(4);
             this.btnCANCELAR.Name = "btnCANCELAR";
             this.btnCANCELAR.Size = new System.Drawing.Size(171, 44);
             this.btnCANCELAR.TabIndex = 45;
@@ -222,7 +222,7 @@ namespace Proyecto
             this.btnELIMINAR.Enabled = false;
             this.btnELIMINAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnELIMINAR.Location = new System.Drawing.Point(653, 142);
-            this.btnELIMINAR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnELIMINAR.Margin = new System.Windows.Forms.Padding(4);
             this.btnELIMINAR.Name = "btnELIMINAR";
             this.btnELIMINAR.Size = new System.Drawing.Size(143, 39);
             this.btnELIMINAR.TabIndex = 46;
@@ -248,7 +248,7 @@ namespace Proyecto
             this.btnINGRESARPRODUCTOS.Enabled = false;
             this.btnINGRESARPRODUCTOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnINGRESARPRODUCTOS.Location = new System.Drawing.Point(476, 142);
-            this.btnINGRESARPRODUCTOS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnINGRESARPRODUCTOS.Margin = new System.Windows.Forms.Padding(4);
             this.btnINGRESARPRODUCTOS.Name = "btnINGRESARPRODUCTOS";
             this.btnINGRESARPRODUCTOS.Size = new System.Drawing.Size(171, 39);
             this.btnINGRESARPRODUCTOS.TabIndex = 48;
@@ -362,7 +362,7 @@ namespace Proyecto
             this.btnlimpiar.Enabled = false;
             this.btnlimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnlimpiar.Location = new System.Drawing.Point(805, 142);
-            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(171, 39);
             this.btnlimpiar.TabIndex = 57;
@@ -421,7 +421,7 @@ namespace Proyecto
             this.Controls.Add(this.cmbTIPOVENTA);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.cmbCLIENTE);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Ventas";
             this.Text = "VENTAS";
             this.Load += new System.EventHandler(this.Ventas_Load);
