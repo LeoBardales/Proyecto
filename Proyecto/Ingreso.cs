@@ -45,7 +45,8 @@ namespace Proyecto
                 else {
 
                     if (comprobar==0) {
-                        MessageBox.Show("CANTIDAD NO COINCIDE CON LA COMPRA \n SI DESEA ASEPTARLO PRECIONE EL BOTON CONSTANCIA \n DE LO CONTRARIO EN CANELAR");
+                        MessageBox.Show("CANTIDAD NO COINCIDE CON LA COMPRA \nSI DESEA ACEPTARLO PRECIONE EL BOTON CONSTANCIA \nDE LO CONTRARIO EN CANELAR");
+                        btnConstancia.Enabled = true;
                     }
                     else
                     {
@@ -55,6 +56,9 @@ namespace Proyecto
                             con.abrir();
                             comando.ExecuteNonQuery();
                             con.close();
+                            desbloquear(false);
+                            limpiar();
+                            btnConstancia.Enabled = false;
                             MessageBox.Show("PRODUCTO INGRESADO");
                         }
                         catch (Exception ex)
@@ -139,6 +143,84 @@ namespace Proyecto
         {
             string[] temp = monthCalendar1.SelectionRange.End.ToShortDateString().Split('/');
             fecha = temp[2] + "-" + temp[1] + "-" + temp[0];
+           
+        }
+        public void limpiar() {
+            txtCantidad.Text = "";
+            txtcompra.Text = "";
+            cmbarticulo.Text = "";
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            btnConstancia.Enabled = false;
+            desbloquear(false);
+            limpiar();
+            txtConstancia.Visible = false;
+            btnguardar.Visible = false;
+        }
+
+        private void btnConstancia_Click(object sender, EventArgs e)
+        {
+            txtConstancia.Visible = true;
+            btnguardar.Visible = true;
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            if (txtcompra.Text != "" && cmbarticulo.Text != "" && txtCantidad.Text != "" && txtConstancia.Text!="")
+            {
+               
+                int comprobar = -1;
+                try
+                {
+                    SqlCommand comando = new SqlCommand("select dbo.comprobar(" + compra + "," + cmbarticulo.Text + "," + txtCantidad.Text + ",'" + fecha + "')", con.conectar);
+                    con.abrir();
+                    comprobar = Int32.Parse(comando.ExecuteScalar().ToString());
+                    con.close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR: " + ex);
+                }
+                if (comprobar == 2)
+                {
+                    MessageBox.Show("PRODUCTO VENCIDO");
+                }
+                else
+                {
+
+                    
+                        try
+                        {
+                            SqlCommand comando = new SqlCommand("EXECUTE spInsertConstancia @compra,@art,@cant,@fecha,1,@obs", con.conectar);
+                            comando.Parameters.AddWithValue("@compra", compra);
+                            comando.Parameters.AddWithValue("@art", cmbarticulo.Text);
+                            comando.Parameters.AddWithValue("@cant", txtCantidad.Text);
+                            comando.Parameters.AddWithValue("@fecha", fecha);
+                            comando.Parameters.AddWithValue("@obs", txtConstancia.Text);
+                        con.abrir();
+                            comando.ExecuteNonQuery();
+                            con.close();
+                            btnConstancia.Enabled = false;
+                            desbloquear(false);
+                            limpiar();
+                            txtConstancia.Visible = false;
+                            btnguardar.Visible = false;
+                        MessageBox.Show("PRODUCTO INGRESADO");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("ERROR: " + ex);
+                        }
+
+                    
+
+                }
+
+            }
+            else { MessageBox.Show("DEBE RELLENAR TODOS LOS CAMPOS"); };
+
         }
     }
 }

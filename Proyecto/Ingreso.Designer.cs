@@ -40,6 +40,8 @@ namespace Proyecto
             this.label3 = new System.Windows.Forms.Label();
             this.btnConstancia = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtConstancia = new System.Windows.Forms.TextBox();
+            this.btnguardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -165,10 +167,10 @@ namespace Proyecto
             this.btnConstancia.TabIndex = 53;
             this.btnConstancia.Text = "CONSTANCIA";
             this.btnConstancia.UseVisualStyleBackColor = true;
+            this.btnConstancia.Click += new System.EventHandler(this.btnConstancia_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Enabled = false;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCancelar.Location = new System.Drawing.Point(371, 232);
@@ -178,13 +180,41 @@ namespace Proyecto
             this.btnCancelar.TabIndex = 54;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // txtConstancia
+            // 
+            this.txtConstancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConstancia.Location = new System.Drawing.Point(13, 338);
+            this.txtConstancia.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtConstancia.Multiline = true;
+            this.txtConstancia.Name = "txtConstancia";
+            this.txtConstancia.Size = new System.Drawing.Size(398, 88);
+            this.txtConstancia.TabIndex = 55;
+            this.txtConstancia.Visible = false;
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnguardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnguardar.Location = new System.Drawing.Point(419, 359);
+            this.btnguardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(171, 39);
+            this.btnguardar.TabIndex = 56;
+            this.btnguardar.Text = "GUARDAR";
+            this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Visible = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // Ingreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(596, 361);
+            this.ClientSize = new System.Drawing.Size(596, 437);
+            this.Controls.Add(this.btnguardar);
+            this.Controls.Add(this.txtConstancia);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConstancia);
             this.Controls.Add(this.label3);
@@ -218,5 +248,7 @@ namespace Proyecto
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnConstancia;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.TextBox txtConstancia;
+        private System.Windows.Forms.Button btnguardar;
     }
 }
