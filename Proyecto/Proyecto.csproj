@@ -86,6 +86,12 @@
       <DependentUpon>Compras.cs</DependentUpon>
     </Compile>
     <Compile Include="conexion.cs" />
+    <Compile Include="Constancias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Constancias.Designer.cs">
+      <DependentUpon>Constancias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,12 @@
     <Compile Include="ListaProveedores.Designer.cs">
       <DependentUpon>ListaProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuBodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBodega.Designer.cs">
+      <DependentUpon>MenuBodega.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +153,12 @@
     </Compile>
     <Compile Include="ProveedorMes.Designer.cs">
       <DependentUpon>ProveedorMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroIngreso.Designer.cs">
+      <DependentUpon>RegistroIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="SaldoCdia.cs">
       <SubType>Form</SubType>
@@ -166,6 +184,9 @@
     <EmbeddedResource Include="Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Constancias.resx">
+      <DependentUpon>Constancias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +205,9 @@
     <EmbeddedResource Include="ListaProveedores.resx">
       <DependentUpon>ListaProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuBodega.resx">
+      <DependentUpon>MenuBodega.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProveedorMes.resx">
       <DependentUpon>ProveedorMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroIngreso.resx">
+      <DependentUpon>RegistroIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SaldoCdia.resx">
       <DependentUpon>SaldoCdia.cs</DependentUpon>
