@@ -28,5 +28,11 @@ namespace Proyecto
             RegistroIngreso ri = new RegistroIngreso();
             ri.Show();
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            ElaboracionProductos ep = new ElaboracionProductos();
+            ep.Show();
+        }
     }
 }
