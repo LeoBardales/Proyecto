@@ -34,6 +34,12 @@ namespace Proyecto
             Articulos a = new Articulos();
             a.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Cheque ch = new Cheque();
+            ch.Show();
+        }
     }
  }
 
