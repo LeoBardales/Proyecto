@@ -67,6 +67,12 @@
     <Compile Include="Articulos.Designer.cs">
       <DependentUpon>Articulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cheque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cheque.Designer.cs">
+      <DependentUpon>Cheque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,12 @@
     </Compile>
     <Compile Include="Constancias.Designer.cs">
       <DependentUpon>Constancias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="facturasclientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="facturasclientes.Designer.cs">
+      <DependentUpon>facturasclientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -181,6 +193,9 @@
     <EmbeddedResource Include="Articulos.resx">
       <DependentUpon>Articulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cheque.resx">
+      <DependentUpon>Cheque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Constancias.resx">
       <DependentUpon>Constancias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="facturasclientes.resx">
+      <DependentUpon>facturasclientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

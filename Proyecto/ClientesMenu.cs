@@ -30,5 +30,17 @@ namespace Proyecto
             Ventas ventas = new Ventas();
             ventas.Show();
         }
+
+        private void btnpago_Click(object sender, EventArgs e)
+        {
+            PagoFactura pf = new PagoFactura();
+            pf.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            facturasclientes fc = new facturasclientes();
+            fc.Show();
+        }
     }
 }
