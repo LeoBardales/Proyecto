@@ -85,9 +85,9 @@ namespace Proyecto
                 {
                     DataGridProductos.Rows.Add(cmbPRODUCTO.Text, txtCANTIDAD.Text);
                 }
-                else { MessageBox.Show("No sea MAJE no tendra existencias"); }
+                else { MessageBox.Show("No tendra existencias"); }
             }
-            else { MessageBox.Show("No sea MAJE ingrese una cantidad"); }
+            else { MessageBox.Show("No ingrese una cantidad"); }
             
             btnCONFIRMAR.Enabled = true;
            
