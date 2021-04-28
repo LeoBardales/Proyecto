@@ -110,20 +110,20 @@ namespace Proyecto
            
         }
 
-        
+        string cliente = "";
         int ventaID = 0;
         private void BtnVENTA_Click(object sender, EventArgs e)
         {
             if (cmbCLIENTE.Text != "" && cmbPAGO.Text != "" && cmbTIPOVENTA.Text != "")
             {
-                
+                cliente = cmbCLIENTE.Text;
                 String pago = "";
                 int tipoVenta = 0;
                 int clienteID = Int32.Parse(cmbCLIENTE.Text);
                 if (cmbTIPOVENTA.Text == "AL POR MAYOR") { tipoVenta = 1; }
-                if (cmbTIPOVENTA.Text == "DETALLE") { tipoVenta = 2; }
-                if (cmbPAGO.Text == "CREDITO") { pago = "c"; }
-                if (cmbPAGO.Text == "CONTADO") { pago = "r"; }
+                if (cmbTIPOVENTA.Text == "DETALLE") { tipoVenta = 2;  }
+                if (cmbPAGO.Text == "CREDITO") { pago = "c"; btncobrar.Visible = false; }
+                if (cmbPAGO.Text == "CONTADO") { pago = "r"; btncobrar.Visible = true; }
                 try {
                     SqlCommand comando = new SqlCommand("execute spInsertFactura @ID, @TIPOV,@PAGO", con.conectar);
                     comando.Parameters.AddWithValue("@ID", clienteID);
@@ -231,6 +231,7 @@ namespace Proyecto
             txtDESCUENTO.Text = "";
             cmbTIPOVENTA.Text = "";
             cmbPAGO.Text = "";
+            btncobrar.Visible = false;
 
         }
         public void cantidad(String art, int cant) {
@@ -341,11 +342,13 @@ namespace Proyecto
                 
                 tipov = dataGridView1.Rows[fila].Cells[2].Value.ToString();
                 tipo = dataGridView1.Rows[fila].Cells[3].Value.ToString();
-              
-               
 
+
+                
                 if (tipov == "AL POR MAYOR"){
                     tv = 1;
+                    
+                   
                 }
 
                 if (tipov == "DETALLE")
@@ -356,11 +359,13 @@ namespace Proyecto
                 if (tipo == "CREDITO")
                 {
                     t = "c";
+                    btncobrar.Visible = false;
                 }
 
                 if (tipo == "CONTADO")
                 {
                     t = "r";
+                    btncobrar.Visible = true;
                 }
 
                 
@@ -412,6 +417,22 @@ namespace Proyecto
             limpiarAll();
             btnELIMINAR.Enabled = false;
             
+        }
+
+        private void btncobrar_Click(object sender, EventArgs e)
+        {
+            try {
+                String precio = dataGridView1.Rows[0].Cells[6].Value.ToString();
+                SqlCommand comando = new SqlCommand("execute spInsertRecibo " + cliente + "," + precio + "", con.conectar);
+                con.abrir();
+                comando.ExecuteNonQuery();
+                con.close();
+                MessageBox.Show("SE A PAGADO EL MONTO: "+precio);
+                MostrarDatos();
+                btncobrar.Visible = false;
+                btnCANCELAR.Enabled = false;
+            }
+            catch (Exception ex) { MessageBox.Show("Error: " + ex); }
         }
     }
   
